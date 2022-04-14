@@ -1,7 +1,6 @@
 "use strict";
 let humans = [3, 2];
 let aliens = [4, 3];
-console.log("Slava mracobes");
 
 function instruction(element) {
   console.log(element);
@@ -35,4 +34,3 @@ console.log(nextGen);
 ever(aliens, humansPush);
 console.log(nextGen);
 
-console.log("Slava mracobes");
