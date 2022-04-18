@@ -1,12 +1,21 @@
 "use strict";
 
-let Djonson = [2, 3, 7, 0, 1, 3, 2, 8];
+let Djonson = [
+  "Майя",
+  "Ребекка",
+  "Екатериа",
+  "Карина",
+  "Евдундосья",
+  "Снандулья",
+  "Клавдия",
+  "Гертруда",
+];
 
 function myFunctionCallback(ourIndex) {
-  if (ourIndex === 8) {
+  if (ourIndex === "Гертруда") {
     return true;
   } else {
-    return -1;
+    return false;
   }
 }
 
@@ -17,6 +26,7 @@ function myFind(array, callback) {
       return i;
     }
   }
+  return -1;
 }
 
 let f = myFind(Djonson, myFunctionCallback);
