@@ -3,8 +3,10 @@
 
 let oldArr = [2, 4, 0, 15, 3, -5, 2];
 let newArr = oldArr.reduce((acc, value, index, array) => {
-  if (array.length === 1 && value > 10) {
-    acc.push(value);
+  if (array.length === 1  ) {
+    if(value > 10){
+      acc.push(value);
+    }
   }
   let sum = 0;
   if (index === 0) {

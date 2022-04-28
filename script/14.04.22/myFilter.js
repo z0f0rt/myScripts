@@ -13,7 +13,7 @@
 
 //=======================================================================================
 
-let arr = [-2, 4, 6, 0, 7, -22, 0];
+let arr = [-2, 4, 3, 0, 7, -22, 5];
 function instrument(el) {
   if (el % 2 === 0) {
     return true;
@@ -35,5 +35,5 @@ function filter(instrument, array) {
 
 let x = filter(instrument, arr);
 console.log(x);
-
+console.log(arr);
 //=======================================================================================
