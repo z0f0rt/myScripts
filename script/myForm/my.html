@@ -1,53 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kaka pipi</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Форма для регистрации клиентов</title>
     <style>
-        .login {
-            border: 3px #4f66dd solid;
-padding: 10px;
-margin: 15px;
-        }
-        .password{
-            border: 3px #4f66dd solid;
-padding: 10px;
-margin: 15px;
-        }
-        .button{
-            border: 3px #ffd000 solid;
-            padding: 5px;
-            margin: 10px;
-        }
-        .form {
-            border: 8px #ae2c30 solid;
-padding: 20px;
-margin: 20px;
-        }
-        .sum{
-            color: #138322;
-        }
-        .suk{
-            color: #c01016;
-        }
-    </style>
-</head>
+      .login {
+        border: 3px #4f66dd solid;
+        padding: 10px;
+        margin: 15px;
+      }
+      .password {
+        border: 3px #4f66dd solid;
+        padding: 10px;
+        margin: 15px;
+      }
+      .button {
+        border: 3px #ffd000 solid;
+        padding: 5px;
+        margin: 10px;
+      }
+      .form {
+        border: 8px #ae2c30 solid;
+        padding: 20px;
+        margin: 20px;
+      }
+      .sum {
+        color: #138322;
+      }
+      .suk {
+        color: #ae2c30;
+      }
 
-<body>
-<h3 style="border: 5px #4f66dd solid"> Форма регистрации и входа</h3>
-<div class = "form">
-<div class = "login" id = "inputText">
-    <input type="text" placeholder="Имя пользователя">
-</div>
-  <div class = "password" id = "inputPassword">
-<input type="password" placeholder="Пароль">
-  </div>
-    <button>Подтвердить</button>
-    <div class="sum"></div>
-    <div class="suk"></div>
-</div>
-<script src="script.js"> </script>
-</body>
+      .a {
+        border: 2px #4f66dd solid;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="a">
+      <h2>Форма регистрации и входа</h2>
+    </div>
+    <div class="form">
+      <div class="login" id="input-text">
+        <input type="text" placeholder="Имя пользователя" />
+      </div>
+      <div class="password" id="input-password">
+        <input type="password" placeholder="Пароль" />
+      </div>
+      <button>Подтвердить</button>
+      <div id="id-sum"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
