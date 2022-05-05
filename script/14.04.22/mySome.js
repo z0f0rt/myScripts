@@ -2,7 +2,7 @@
 let essential = [228, -324, 3, 43, 64, 13, -5, 1337, "string"];
 
 function ukazania(el) {
-  if (el === 0) {
+  if (el === -5) {
     return true;
   } else {
     return false;

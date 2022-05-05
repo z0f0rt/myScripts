@@ -16,5 +16,8 @@ function myFind(array, callback) {
   }
 }
 
-let f = myFind(Djonson, myFunctionCallback);
-console.log(f);
+// let f = myFind(Djonson, myFunctionCallback);
+// console.log(f);
+
+let myNumber = Djonson.find((element) => element === 6);
+console.log(myNumber);

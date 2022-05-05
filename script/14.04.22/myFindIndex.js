@@ -29,5 +29,8 @@ function myFind(array, callback) {
   return -1;
 }
 
-let f = myFind(Djonson, myFunctionCallback);
-console.log(f);
+// let f = myFind(Djonson, myFunctionCallback);
+// console.log(f);
+
+let origFind = Djonson.findIndex((elem) => elem === "Ребекка");
+console.log(origFind);
