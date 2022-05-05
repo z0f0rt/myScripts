@@ -1,43 +1,76 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 .background {
-  background-color: #264eca;
-  width: 1641.5px;
-  height: 1083px;
+  background: url("BG.png") no-repeat;
+  background-size: cover;
+  background-color: #2148c0;
+}
+.username-input {
+  height: 45px;
+  width: 300px;
+  color: #fff;
+  background-color: #2148c0;
+  border: 1px #fff solid;
+  border-radius: 4px;
 }
 .login {
-  padding: 10px;
-  margin: 15px;
   text-align: center;
+  padding-bottom: 20px;
+  margin: 15px;
   font-family: "Montserrat", sans-serif;
 }
+.password-input {
+  background-color: #2148c0;
+  height: 45px;
+  width: 300px;
+  color: #fff;
+  border: 1px #fff solid;
+  border-radius: 4px;
+}
 .password {
-  padding: 10px;
-  margin: 15px;
   text-align: center;
+  margin-bottom: 43px;
   font-family: "Montserrat", sans-serif;
 }
 .button-style {
+  color: #fff;
   text-align: center;
-  background-color: #e21010;
-  /* цвет фона должен быть белым */
-  padding: 13 123 12 123;
-  margin: 13 123 12 123;
-}
-.button {
-  border: 3px #ffd000 solid;
-  padding: 5px;
-  margin: 10px;
-  text-align: center;
+  color: #2148c0;
   font-family: "Montserrat", sans-serif;
 }
-.sum {
-  color: #138322;
+.button {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  height: 45px;
+  width: 300px;
+  color: #2148c0;
+  text-align: center;
+  padding: 5px;
+  margin-bottom: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  border-radius: 4px;
+}
+.forgot-pass {
+  margin-top: 0px;
+  margin-bottom: 23px;
+  color: #fff;
+  text-align: center;
 }
 .suk {
-  color: #ae2c30;
+  color: #ff7171;
+
+  text-align: center;
+  font-weight: 300;
 }
-.mybasket {
-  display: block;
-  margin: auto;
+.sum {
+  color: #5dff4f;
+
+  text-align: center;
+  font-weight: 300;
+}
+.basket {
+  margin-top: 161px;
+  margin-bottom: 71.15px;
+  text-align: center;
 }

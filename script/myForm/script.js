@@ -5,14 +5,14 @@ document.querySelector("button").addEventListener("click", () => {
     password: inputs[1].value,
   };;
   let x = document.querySelector("#id-sum");
-  if (inputs[0].value === "Слава") {
+  if (inputs[0].value === "Слава" || inputs[0].value === "Марина") {
     // document.querySelector('.suk').innerHTML = "Пользователь с таким именем уже зарегестрирован!"
     x.className = "suk";
     x.innerHTML = "Пользователь с таким именем уже зарегестрирован!";
   } else {
     console.log(`Имя пользователя: ${obj.name}, Пароль: ${obj.password}`);
     x.className = "sum";
-    x.innerHTML = `Пользователь с именем: ${obj.name} и паролем: ${obj.password} успешно зарегестрирован. Поздравляю!`;
+    x.innerHTML = `Пользователь с именем: ${obj.name}  и паролем: ${obj.password}  успешно зарегестрирован`;
   }
 });
 
