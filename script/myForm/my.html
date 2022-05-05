@@ -4,55 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="my.css">
     <title>Форма для регистрации клиентов</title>
-    <style>
-      .login {
-        border: 3px #4f66dd solid;
-        padding: 10px;
-        margin: 15px;
-      }
-      .password {
-        border: 3px #4f66dd solid;
-        padding: 10px;
-        margin: 15px;
-      }
-      .button {
-        border: 3px #ffd000 solid;
-        padding: 5px;
-        margin: 10px;
-      }
-      .form {
-        border: 8px #ae2c30 solid;
-        padding: 20px;
-        margin: 20px;
-      }
-      .sum {
-        color: #138322;
-      }
-      .suk {
-        color: #ae2c30;
-      }
-
-      .a {
-        border: 2px #4f66dd solid;
-      }
-    </style>
   </head>
 
-  <body>
-    <div class="a">
-      <h2>Форма регистрации и входа</h2>
+  <body class="background">
+      <div class="basket">
+      <img class = 'mybasket' src="Group.png" alt="Здесь должна быть картинка">
     </div>
-    <div class="form">
       <div class="login" id="input-text">
-        <input type="text" placeholder="Имя пользователя" />
+        <input type="text" placeholder="USERNAME" />
       </div>
       <div class="password" id="input-password">
-        <input type="password" placeholder="Пароль" />
+        <input type="password" placeholder="PASSWORD" />
       </div>
-      <button>Подтвердить</button>
-      <div id="id-sum"></div>
+      <div class="button-style">
+      <button>LOGIN</button>
     </div>
+      <div id="id-sum">
+      </div>
+  
     <script src="script.js"></script>
   </body>
 </html>
