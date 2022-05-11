@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap");
 .container {
-  max-width: 305px;
+  max-width: 301px;
   margin: auto;
 }
 .background {
@@ -18,7 +18,7 @@
 .username-input {
   color: #fff;
   height: 45px;
-  width: 270px;
+  width: 251px;
   border: 1px #fff solid;
   border-radius: 4px;
   font-family: "Montserrat";
@@ -38,7 +38,7 @@
 .password-input {
   color: #fff;
   height: 45px;
-  width: 270px;
+  width: 251px;
   border: 1px #fff solid;
   border-radius: 4px;
   font-family: "Montserrat";
