@@ -1,37 +1,62 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap");
+.container {
+  max-width: 305px;
+  margin: auto;
+}
 .background {
   background: url("BG.png") no-repeat;
   background-size: cover;
   background-color: #2148c0;
 }
-.username-input {
-  height: 45px;
-  width: 300px;
-  color: #fff;
-  background-color: #2148c0;
-  border: 1px #fff solid;
-  border-radius: 4px;
-}
 .login {
   text-align: center;
   padding-bottom: 20px;
-  margin: 15px;
+  font-family: "Montserrat", sans-serif;
+}
+.username-input {
+  color: #fff;
+  height: 45px;
+  width: 270px;
+  border: 1px #fff solid;
+  border-radius: 4px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  background: url(user.png) no-repeat center left;
+  padding-left: 45px;
+  background-position: 4% 50%
+  
+}
+.username-input::placeholder {
+  color: #fff;
   font-family: "Montserrat", sans-serif;
 }
 .password-input {
-  background-color: #2148c0;
-  height: 45px;
-  width: 300px;
   color: #fff;
+  height: 45px;
+  width: 270px;
   border: 1px #fff solid;
   border-radius: 4px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  background: url(lock.png) no-repeat center left;
+  padding-left: 45px;
+  background-position: 4% 50%
+}
+.password-input::placeholder {
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
 }
 .password {
   text-align: center;
   margin-bottom: 43px;
-  font-family: "Montserrat", sans-serif;
 }
 .button-style {
   color: #fff;
@@ -53,21 +78,43 @@
   border-radius: 4px;
 }
 .forgot-pass {
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: right;
   margin-top: 0px;
   margin-bottom: 23px;
-  color: #fff;
-  margin-left: 954px;
-  font-family: 'Montserrat', sans-serif;
+}
+.options-forg-pass {
+  margin: auto;
+  max-width: 300px;
 }
 .suk {
   color: #ff7171;
   text-align: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 20px;
+  text-transform: uppercase;
+  max-width: 200px;
+  margin: auto;
 }
 .sum {
   color: #5dff4f;
   text-align: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 20px;
+  text-transform: uppercase;
+  max-width: 200px;
+  margin: auto;
 }
 .basket {
   margin-top: 161px;
