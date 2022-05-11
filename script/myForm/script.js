@@ -8,11 +8,11 @@ document.querySelector("button").addEventListener("click", () => {
   if (inputs[0].value === "Слава" || inputs[0].value === "Марина") {
     // document.querySelector('.suk').innerHTML = "Пользователь с таким именем уже зарегестрирован!"
     x.className = "suk";
-    x.innerHTML = "Пользователь с таким именем уже зарегестрирован!";
+    x.innerHTML = "ПОЛЬЗОВАТЕЛЬ С ТАКИМ ИМЕНЕМ УЖЕ ЗАРЕГЕСТРИРОВАН!";
   } else {
     console.log(`Имя пользователя: ${obj.name}, Пароль: ${obj.password}`);
     x.className = "sum";
-    x.innerHTML = `Пользователь с именем: ${obj.name}  и паролем: ${obj.password}  успешно зарегестрирован`;
+    x.innerHTML = `ПОЛЬЗОВАТЕЛЬ С ИМЕНЕМ ${obj.name} И ПАРОЛЕМ ${obj.password} УСПЕШНО ЗАРЕГЕСТРИРОВАН`;
   }
 });
 

@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap');
 .background {
   background: url("BG.png") no-repeat;
   background-size: cover;
@@ -55,19 +56,18 @@
   margin-top: 0px;
   margin-bottom: 23px;
   color: #fff;
-  text-align: center;
+  margin-left: 954px;
+  font-family: 'Montserrat', sans-serif;
 }
 .suk {
   color: #ff7171;
-
   text-align: center;
-  font-weight: 300;
+  font-family: 'Montserrat', sans-serif;
 }
 .sum {
   color: #5dff4f;
-
   text-align: center;
-  font-weight: 300;
+  font-family: 'Montserrat', sans-serif;
 }
 .basket {
   margin-top: 161px;
