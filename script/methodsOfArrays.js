@@ -34,3 +34,4 @@ myForEach(func, humans);
 // humans.myForEach((item) => {
 //   console.log(item);
 // });
+

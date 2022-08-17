@@ -394,31 +394,30 @@
 // }
 // console.log(arr);
 
-let arr = ["a", "b", "c", "d", "e"];
-for (let i = arr.length - 1; i >= 0; i--) {
-  if (arr[i] == arr[0 - 1]) {
-    break;
-  } else {
-    arr.push(arr[i]);
-  }
-}
-for (let i = 0; i < arr.length; i++) {
-  if (arr[i] === arr[5]) {
-    break;
-  } else {
-    arr.shift(arr[i]);
-  }
-}
-console.log(arr);
+// let arr = ["a", "b", "c", "d", "e"];
+// for (let i = arr.length - 1; i >= 0; i--) {
+//   if (arr[i] == arr[0 - 1]) {
+//     break;
+//   } else {
+//     arr.push(arr[i]);
+//   }
+// }
+// for (let i = 0; i < arr.length; i++) {
+//   if (arr[i] === arr[5]) {
+//     break;
+//   } else {
+//     arr.shift(arr[i]);
+//   }
+// }
+// console.log(arr);
 
+// let arr1 = ["a", "b", "c", "d", "e"];
+// let a = [];
+// for (let i = arr1.length - 1; i >= 0; i--) {
+//   a.push(arr1[i]);
+// }
+// for (let j = 0; j < a.length; j++) {
+//   arr1.push(a[j]);
+// }
+// console.log(a);
 
-
-let arr1 = ["a", "b", "c", "d", "e"];
-let a = [];
-for (let i = arr1.length - 1; i >= 0; i--) {
-  a.push(arr1[i]);
-}
-for (let j = 0; j < a.length; j++) {
-  arr1.push(a[j]);
-}
-console.log(a);
