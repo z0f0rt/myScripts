@@ -3,7 +3,7 @@ document.querySelector("button").addEventListener("click", () => {
   let obj = {
     name: inputs[0].value,
     password: inputs[1].value,
-  };;
+  };
   let x = document.querySelector("#id-sum");
   if (inputs[0].value === "Слава" || inputs[0].value === "Марина") {
     // document.querySelector('.suk').innerHTML = "Пользователь с таким именем уже зарегестрирован!"
@@ -15,6 +15,7 @@ document.querySelector("button").addEventListener("click", () => {
     x.innerHTML = `ПОЛЬЗОВАТЕЛЬ С ИМЕНЕМ ${obj.name} И ПАРОЛЕМ ${obj.password} УСПЕШНО ЗАРЕГЕСТРИРОВАН`;
   }
 });
+console.log(x);
 
 // document.querySelector("button").onclick = () => {
 //   alert("Вы нажали кнопку");

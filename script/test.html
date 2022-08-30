@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      const root = document.getElementById("root");
+
+      fetchBible("https://www.abibliadigital.com.br/api/books").then((res) => {
+        console.log(res);
+        [...res].forEach((v) => {
+          const newElem = document.createElement("div");
+          newElem.innerHTML = v.author + " - " + v.name;
+          newElem.onclick = () => getVerse(v.abbrev.en);
+          root.append(newElem);
+        });
+      });
+
+      function getVerse(abbrev) {
+        fetchBible(`https://www.abibliadigital.com.br/api/verses/bbe/${abbrev}/1/1`).then(
+          (res) => {
+            root.innerHTML = res.text;
+          }
+        );
+      }
+
+      function fetchBible(url) {
+        return fetch(url, {
+          headers: {
+            Authtorisation:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ik1vbiBKdWwgMTEgMjAyMiAyMTo1ODowNiBHTVQrMDAwMC5zbGF2YXNvYmJAZ21haWwuY29tIiwiaWF0IjoxNjU3NTc2Njg2fQ.Duwo33BGC7gl2bxyIv0ECrKe-6-YbAvSJA26XH9vMSQ",
+          },
+        }).then((res) => {
+          return res.json();
+        });
+      }
+    </script>
+  </body>
+</html>
