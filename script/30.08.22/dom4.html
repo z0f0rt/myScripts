@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="parent">
+      <p class="www">text1</p>
+      <p class="www">text2</p>
+      <p class="www">text3</p>
+      <p class="ggg">text</p>
+      <p class="ggg">text</p>
+      <p class="ggg">text</p>
+    </div>
+    <script>
+            let parent = document.querySelector("#parent")
+            let elems = parent.querySelectorAll(".www");
+            for(let elem of elems){
+              alert(elem.textContent);
+            }
+
+    </script>
+  </body>
+</html>

@@ -115,12 +115,14 @@
 // let arr = [100000, 11, 6, 4, 5];
 // getDigit(arr,callback);
 
-let x = -8;
-let y = 54;
-let hey;
-let arr = [];
-for (let i = x - 1; i < y; i++) {
-  arr.push(x++);
-}
+// let x = -8;
+// let y = 54;
+// let hey;
+// let arr = [];
+// for (let i = x - 1; i < y; i++) {
+//   arr.push(x++);
+// }
 
-console.log(arr);
+// console.log(arr);
+
+

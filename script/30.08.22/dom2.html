@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body>
+    <ul id="elem">
+      <li>tex1</li>
+      <li>text2</li>
+      <li>text3</li>
+      <li>text4</li>
+      <li>text5</li>
+    </ul>
+    <script>
+      //document.querySelector("#elem").firstElementChild.classList.add('colored')
+
+      //   document.querySelector("#elem").lastElementChild.classList.add("colored");
+
+      let elems = document.querySelector("#elem").children
+      for (let elem of elems) {
+        elem.innerHTML = elem.innerHTML + "!";
+      }
+    </script>
+  </body>
+</html>

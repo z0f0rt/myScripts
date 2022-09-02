@@ -7,27 +7,31 @@
     <title>Document</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      
+    </div>
+
     <script>
       const root = document.getElementById("root");
 
-      fetchBible("https://www.abibliadigital.com.br/api/books").then((res) => {
-        console.log(res);
-        [...res].forEach((v) => {
-          const newElem = document.createElement("div");
-          newElem.innerHTML = v.author + " - " + v.name;
-          newElem.onclick = () => getVerse(v.abbrev.en);
-          root.append(newElem);
-        });
-      });
+      // fetchBible("https://www.abibliadigital.com.br/api/books").then((res) => {
+      //   console.log(res);
+      //   [...res].forEach((v) => {
+      //     const newElem = document.createElement("div");
+      //     newElem.innerHTML = v.author + " - " + v.name;
+      //     newElem.onclick = () => getVerse(v.abbrev.en);
+      //     root.append(newElem);
+      //   });
+      // });
 
-      function getVerse(abbrev) {
-        fetchBible(`https://www.abibliadigital.com.br/api/verses/bbe/${abbrev}/1/1`).then(
-          (res) => {
-            root.innerHTML = res.text;
-          }
-        );
-      }
+      // function getVerse(abbrev,) {
+      //   fetchBible(`https://www.abibliadigital.com.br/api/verses/bbe/${abbrev}/1/1`).then(
+      //     (res) => {
+      //       root.innerHTML = res.text;
+      //     }
+      //   );
+      // }
+
 
       function fetchBible(url) {
         return fetch(url, {
@@ -39,6 +43,26 @@
           return res.json();
         });
       }
+
+      fetchBible("https://www.abibliadigital.com.br/api/books/:abbrev")
+      .then((res) => {
+        console.log(res);
+        // [...res].forEach((v) => {
+        //   const newElem = document.createElement("div");
+        //   newElem.innerHTML = v.author + " - " + v.name;
+        //   newElem.onclick = () => getVerse(v.abbrev.en);
+        //   root.append(newElem);
+        });
+      // });
+
+      // function getVerse(abbrev,) {
+      //   fetchBible(`https://www.abibliadigital.com.br/api/verses/bbe/${abbrev}/1/1`).then(
+      //     (res) => {
+      //       root.innerHTML = res.text;
+      //     }
+      //   );
+      // }
+
     </script>
   </body>
 </html>

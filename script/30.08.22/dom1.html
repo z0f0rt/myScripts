@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="parent">
+      <p>1</p>
+      <p>2</p>
+      <p>3</p>
+      <p>4</p>
+      <p>5</p>
+    </div>
+    <script>
+      let parent = document.querySelector("#parent");
+      let elems = parent.children;
+
+      for (let elem of elems) {
+        console.log(elem.innerHTML
+        );
+      }
+// Почему нельзя вместо elem.innerHTML применить elem.textContent ?
+    //   for (let elem of elems) {
+    //     console.log(elem.textContent
+    //     );
+    //   } 
+    </script>
+  </body>
+</html>
