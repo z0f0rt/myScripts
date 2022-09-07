@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 21. Дан инпут и кнопка. Пользователь вводит в инпут какую-то строку. По нажатию на кнопку перемешайте введенные символы случайным образом и запишите ее обратно в инпут. -->
+    <input type="text" value="" id="inp" />
+    <button id="btn">кнопОЧКА</button>
+
+    <script>
+      //21. Дан инпут и кнопка. Пользователь вводит в инпут какую-то строку. По нажатию на кнопку перемешайте введенные символы случайным образом и запишите ее обратно в инпут.
+      let inp = document.querySelector("#inp");
+      let btn = document.querySelector("#btn");
+      let numbers = 0;
+      btn.addEventListener("click", () => {
+        let v = inp.value;
+        let arr = v.split("");
+        var j, temp;
+        for (var i = arr.length - 1; i > 0; i--) {
+          j = Math.floor(Math.random() * (i + 1));
+          temp = arr[j];
+          arr[j] = arr[i];
+          arr[i] = temp;
+        }
+        inp.value = arr.join("");
+        numbers++;
+        console.log(inp.value + "-" + numbers + " попытка");
+      });
+    </script>
+  </body>
+</html>
