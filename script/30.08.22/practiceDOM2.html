@@ -8,28 +8,101 @@
   </head>
   <body>
     <!-- 21. Дан инпут и кнопка. Пользователь вводит в инпут какую-то строку. По нажатию на кнопку перемешайте введенные символы случайным образом и запишите ее обратно в инпут. -->
-    <input type="text" value="" id="inp" />
-    <button id="btn">кнопОЧКА</button>
+    <!-- <input type="text" value="" id="inp" />
+    <button id="btn">кнопОЧКА</button> -->
 
+    <!-- 22.Дан инпут, кнопка и абзац. В инпут вводится температура в градусах Фаренгейта. По клику на кнопку выведите в абзац температуру в градусах Цельсия. -->
+    <!-- <input type="text" value="" id="inp" placeholder="градусов по Фаренгейту" />
+    <button id="btn">translate</button>
+    <p></p> -->
+    <!-- 23.Дан инпут, кнопка и абзац. В инпут вводится число. По нажатию на кнопку выведите в абзац факториал этого числа. -->
+    <!-- <input type="text" value="" id="inp" />
+    <button id="btn">Factorial</button>
+    <p></p> -->
+
+    <!-- 24.Даны 3 инпута, кнопка и абзац. В инпуты вводятся коэффициенты квадратного уравнения. По нажатию на кнопку найдите корни этого уравнения и выведите их в абзац. -->
+    <!-- <input type="text" value="" id="inp1" />
+    <input type="text" value="" id="inp2" />
+    <input type="text" value="" id="inp3" />
+    <button id="btn">find quads</button>
+    <p></p> -->
     <script>
       //21. Дан инпут и кнопка. Пользователь вводит в инпут какую-то строку. По нажатию на кнопку перемешайте введенные символы случайным образом и запишите ее обратно в инпут.
-      let inp = document.querySelector("#inp");
-      let btn = document.querySelector("#btn");
-      let numbers = 0;
-      btn.addEventListener("click", () => {
-        let v = inp.value;
-        let arr = v.split("");
-        var j, temp;
-        for (var i = arr.length - 1; i > 0; i--) {
-          j = Math.floor(Math.random() * (i + 1));
-          temp = arr[j];
-          arr[j] = arr[i];
-          arr[i] = temp;
-        }
-        inp.value = arr.join("");
-        numbers++;
-        console.log(inp.value + "-" + numbers + " попытка");
-      });
+      // let inp = document.querySelector("#inp");
+      // let btn = document.querySelector("#btn");
+      // let numbers = 0;
+      // btn.addEventListener("click", () => {
+      //   let v = inp.value;
+      //   let arr = v.split("");
+      //   var j, temp;
+      //   for (var i = arr.length - 1; i > 0; i--) {
+      //     j = Math.floor(Math.random() * (i + 1));
+      //     temp = arr[j];
+      //     arr[j] = arr[i];
+      //     arr[i] = temp;
+      //   }
+      //   inp.value = arr.join("");
+      //   numbers++;
+      //   console.log(inp.value + "-" + numbers + " попытка");
+      // });
+
+      // 22.Дан инпут, кнопка и абзац. В инпут вводится температура в градусах Фаренгейта. По клику на кнопку выведите в абзац температуру в градусах Цельсия.
+      // let inp = document.querySelector("#inp");
+      // let btn = document.querySelector("#btn");
+      // let par = document.querySelector("p");
+      // btn.onclick = () => {
+      //   let far = Number(inp.value) - 32;
+      //   far = far / 1.8;
+      //   par.innerHTML = far + " градусов Цельсия";
+      // };
+
+      // 23.Дан инпут, кнопка и абзац. В инпут вводится число. По нажатию на кнопку выведите в абзац факториал этого числа.
+      // let inp = document.querySelector("#inp");
+      // let btn = document.querySelector("#btn");
+      // let par = document.querySelector("p");
+      // btn.onclick = () => {
+      //   let n = Number(inp.value);
+      //   let x = 1;
+      //   if (n == 0 || n == 1) {
+      //     par.innerHTML = x;
+      //   } else {
+      //     for (x; n >= 1; n--) {
+      //       x *= n;
+      //     }
+      //     par.innerHTML = x;
+      //   }
+      // };
+
+      // 24.Даны 3 инпута, кнопка и абзац. В инпуты вводятся коэффициенты квадратного уравнения. По нажатию на кнопку найдите корни этого уравнения и выведите их в абзац.
+      // let A = document.querySelector("#inp1");
+      // let B = document.querySelector("#inp2");
+      // let C = document.querySelector("#inp3");
+      // let btn = document.querySelector("#btn");
+      // let par = document.querySelector("p");
+
+      // // a*x*x + b*x + c = 0
+      // btn.onclick = () => {
+      //   a = Number(A.value);
+      //   b = Number(B.value);
+      //   c = Number(C.value);
+      //   let D;
+      //   D = b * b - 4 * a * c;
+      //   if (D < 0) {
+      //     par.textContent = "Увы сударь, но решений нет!";
+      //   } else {
+      //     if (D === 0) {
+      //       let x = -b / (2 * a);
+      //       par.textContent = x;
+      //     }
+      //     if (D > 0) {
+      //       let x = (-b + Math.sqrt(D)) / (2 * a);
+      //       let X = (-b - Math.sqrt(D)) / (2 * a);
+      //       par.textContent = "Первый корень уравнения: " + x.toFixed(3);
+      //       par.textContent =
+      //         par.textContent + " Второй корень уравнения: " + X.toFixed(3);
+      //     }
+      //   }
+      // };
     </script>
   </body>
 </html>

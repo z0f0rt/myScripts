@@ -12,6 +12,7 @@
     <script>
       const root = document.getElementById("root");
       const btn = document.getElementById("btn");
+
       function fetchBible(url) {
         return fetch(url, {
           headers: {
@@ -22,6 +23,7 @@
           return res.json();
         });
       }
+      
       function kek() {
         fetchBible("https://www.abibliadigital.com.br/api/books").then(
           (res) => {
