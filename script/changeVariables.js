@@ -1,0 +1,10 @@
+"use strict";
+let a = 20;
+let b = 5;
+console.log("a = " + a);
+console.log("b = " + b);
+a = a + b;
+b = a - b;
+a = a - b;
+console.log("a = " + a);
+console.log("b = " + b);
