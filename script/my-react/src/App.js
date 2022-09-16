@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function App() {
   const [count, setCount] = useState(0);
-  const [notification, setNotification] = useState("");
+  const [notification, setNotification] = useState();
   function increment() {
     setCount(count + 1);
     setNotification();
@@ -24,7 +24,6 @@ function App() {
       setNotification();
     } else {
       setNotification("Ошибка");
-      // alert("Ошибка, нельзя извлекать корень из отрицательного числа");
     }
   }
   function clear() {
