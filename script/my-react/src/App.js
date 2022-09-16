@@ -1,34 +1,45 @@
 import React, { useState } from "react";
 
 function App() {
-  const [counts, setCount] = useState(0);
+  const [count, setCount] = useState(0);
   const kek = 0;
+
   function increment() {
-    setCount(counts + 1);
+    setCount(count + 1);
+    setCount(count + 1);
   }
 
   function decrement() {
-    setCount(counts - 1);
+    setCount(count - 1);
   }
 
   function multiply2() {
-    setCount(counts * 2);
+    setCount(count * 2);
   }
 
-  function squareroot() {
-    setCount(Math.sqrt(counts));
+  function root() {
+    if (count > 0) {
+      setCount(Math.sqrt(count));
+    } else {
+      alert("Ошибка");
+    }
   }
 
   function clear() {
-    setCount(counts * kek);
+    setCount(count * kek);
+  }
+  function square() {
+    setCount(count ** 2);
   }
   return (
     <div className="App">
-      <h1>{counts}</h1>
+      <h1>{count}</h1>
+      <input value={count}></input>
       <button onClick={increment}>+</button>
       <button onClick={decrement}>-</button>
       <button onClick={multiply2}>x2</button>
-      <button onClick={squareroot}>&radic;</button>
+      <button onClick={root}>&radic;</button>
+      <button onClick={square}>square</button>
       <button onClick={clear}>clear</button>
     </div>
   );
