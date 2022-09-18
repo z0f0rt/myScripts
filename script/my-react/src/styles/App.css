@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    bottom: 0;
+    box-sizing: border-box;
+}
+
+#root {
+display: flex;
+justify-content: space-between;
+}
+
+.books {
+width: 800px;
+}
