@@ -1,14 +1,35 @@
-* {
-    margin: 0;
-    bottom: 0;
-    box-sizing: border-box;
+.flex-container {
+  display: flex;
+  width: 100%;
 }
-
-#root {
-display: flex;
-justify-content: space-between;
+.title {
+  flex-basis: 66%;
+  flex-shrink: 1;
+  text-align: center;
 }
-
-.books {
-width: 800px;
+.discription {
+  flex-basis: 33%;
+  flex-shrink: 3;
+  
+}
+.one {
+  margin-top: 5%;
+}
+.two {
+  margin-top: 3%;
+}
+.three {
+  margin-top: 3%;
+}
+.fore {
+  margin-top: 3%;
+}
+.five {
+  margin-top: 3%;
+}
+.six {
+  margin-top: 3%;
+}
+.seven {
+  margin-top: 3%;
 }

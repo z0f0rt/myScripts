@@ -1,0 +1,54 @@
+.flex-container {
+  display: flex;
+  width: 100%;
+  background-color: rgb(214, 211, 210);
+}
+.title {
+  flex-basis: 66%;
+  flex-shrink: 1;
+  text-align: center;
+}
+.discription {
+  flex-basis: 33%;
+  flex-shrink: 3;
+}
+.one {
+  margin-top: 5%;
+  margin-right: 20px;
+  border: solid blueviolet;
+}
+.two {
+  margin-top: 3%;
+  border: solid blueviolet;
+  margin-right: 20px;
+}
+.three {
+  margin-top: 3%;
+  border: solid blueviolet;
+  margin-right: 20px;
+}
+.fore {
+  margin-top: 3%;
+  border: solid blueviolet;
+  margin-right: 20px;
+}
+.five {
+  margin-top: 3%;
+  border: solid blueviolet;
+  margin-right: 20px;
+}
+.six {
+  margin-top: 3%;
+  border: solid blueviolet;
+  margin-right: 20px;
+}
+.seven {
+  margin-top: 3%;
+  border: solid blueviolet;
+  margin-right: 20px;
+}
+.kek {
+  text-align: center;
+  border: solid blueviolet;
+  margin-right: 20px;
+}
