@@ -7,10 +7,12 @@
   flex-basis: 66%;
   flex-shrink: 1;
   text-align: center;
+  
 }
 .discription {
   flex-basis: 33%;
   flex-shrink: 3;
+  
 }
 .one {
   margin-top: 5%;
