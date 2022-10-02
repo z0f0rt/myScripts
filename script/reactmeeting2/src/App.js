@@ -1,22 +1,31 @@
 import React, { useState } from "react";
 import "./styles/App.css";
-import PostItem from "./components/PostItem";
+import PostList from "./components/PostList";
+import MyButton from "./components/UI/Button/MyButton";
+import MyInput from "./components/UI/Input/MyInput";
+// import PostItem from "./components/PostItem";
 // import Counter from "./components/Counter";
+
 function App() {
   const [posts, setPosts] = useState([
     { id: 1, title: "JavaScript 1", body: "Description" },
     { id: 2, title: "JavaScript 2", body: "Description" },
     { id: 3, title: "JavaScript 3", body: "Description" },
-    { id: 4, title: "JavaScript 4", body: "Description" }
+    { id: 4, title: "JavaScript 4", body: "Description" },
   ]);
 
+  const [title, setTitle] = useState("");
 
+  const addNewPost = () => {};
 
   return (
     <div className="App">
-      {posts.map((post, index )=> 
-        <PostItem post={post} key ={post.id}/>
-      )}
+      <form>
+        <MyInput value={title} onChange={event=>setTitle(event.target.value)} type="text" placeholder="Название поста" />
+        <MyInput type="text" placeholder="Описание поста" />
+        <MyButton onClick={addNewPost}>Создать пост</MyButton>
+      </form>
+      <PostList posts={posts} title="Посты про JS" />
     </div>
   );
 }
