@@ -17,4 +17,3 @@
 let arr = [3, 2, 1, 2, 5, 6];
 console.log(arr.reverse());
 
-callback

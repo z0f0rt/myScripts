@@ -27,7 +27,7 @@
       function kek() {
         fetchBible("https://www.abibliadigital.com.br/api/books").then(
           (res) => {
-            console.log(res);
+            // console.log(res);
             [...res].forEach((v) => {
               const newElem = document.createElement("div");
               newElem.innerHTML = v.author + " - " + v.name;
@@ -47,6 +47,7 @@
           let theNewElem = document.createElement("div");
           theNewElem.innerHTML = i + 1 + " chapter";
           root.append(theNewElem);
+
           btn.onclick = () => {
             root.innerHTML = "";
             kek();
@@ -63,7 +64,7 @@
           `https://www.abibliadigital.com.br/api/verses/bbe/${abbrev}/${chapter}`
         ).then((res) => {
           let kek = res.verses;
-          console.log(kek.length);
+          // console.log(kek.length);
           for (let i = 0; i < kek.length; i++) {
             const newElem = document.createElement("div");
             newElem.innerHTML = kek[i].text;
