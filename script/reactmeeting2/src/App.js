@@ -16,14 +16,22 @@ function App() {
 
   const [title, setTitle] = useState("");
 
-  const addNewPost = () => {};
+  const addNewPost = (event) => {
+    event.preventDefault();
+    console.log(title);
+  };
 
   return (
     <div className="App">
       <form>
-        <MyInput value={title} onChange={event=>setTitle(event.target.value)} type="text" placeholder="Название поста" />
+        <MyInput
+          value={title}
+          onChange={(event) => setTitle(event.target.value)}
+          type="text"
+          placeholder="Название поста"
+        />
         <MyInput type="text" placeholder="Описание поста" />
-        <MyButton onClick={addNewPost}>Создать пост</MyButton>
+        <MyButton >Создать пост</MyButton>
       </form>
       <PostList posts={posts} title="Посты про JS" />
     </div>
