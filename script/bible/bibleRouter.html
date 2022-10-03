@@ -23,7 +23,7 @@
           return res.json();
         });
       }
-      
+
       function kek() {
         fetchBible("https://www.abibliadigital.com.br/api/books").then(
           (res) => {
@@ -53,7 +53,7 @@
             kek();
           };
           theNewElem.onclick = () => {
-            getVerse(abbrev, i + 1, chapters);
+            getVerse(abbrev, i+1, chapters);
           };
         }
       }
