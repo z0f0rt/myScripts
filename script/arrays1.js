@@ -9,8 +9,8 @@ let a = 20;
 let b = 21;
 let kek = a !== b;
 
-if ((kek = true)) {
-  console.log(typeof true);
+if (kek) {
+  console.log(typeof kek);
 } else {
-  console.log("228");
+  console.log(a+b);
 }
