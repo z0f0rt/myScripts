@@ -18,3 +18,9 @@ let exp = function () {
 };
 console.log(exp());
 //Нельзя вызывать функциональное выражение, до выделения для него переменной
+
+console.log(
+  +function () {
+    return 10 - 5;
+  }()
+);

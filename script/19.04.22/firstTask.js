@@ -12,3 +12,4 @@ let f = arr.reduce((acc, v) => {
     return acc + v;
   }
 });
+
