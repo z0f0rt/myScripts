@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import { MyList } from "./MyList";
+import { texts } from "./texts.js";
+import { Transit } from "./Transit";
 
 function App() {
+  const [notes1, setNotes1] = useState([...texts]);
+  const [notes2, setNotes2] = useState([]);
+
+  function func1(index) {
+    const x = notes1.splice(index, 1);
+    setNotes1([...notes1]);
+    notes2.push(...x);
+    setNotes2([...notes2]);
+  }
+
+  function func2(index) {
+    const y = notes2.splice(index, 1);
+    setNotes2([...notes2]);
+    notes1.push(...y);
+    setNotes1([...notes1]);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex-container">
+      <MyList className="left" list={notes1} onElemClick={func1} />
+      <MyList className="right" list={notes2} onElemClick={func2} />
     </div>
   );
 }
