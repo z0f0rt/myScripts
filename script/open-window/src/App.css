@@ -1,0 +1,15 @@
+.btn {
+  position: relative;
+  left: 300px;
+}
+.LeftWindow {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 380px;
+  position: absolute;
+  background-color: rgb(217, 219, 221);
+}
+.WindowButton {
+  float: right;
+}
