@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./App.css";
 import { MyList } from "./MyList";
 import { texts } from "./texts.js";
-import { Transit } from "./Transit";
 
 function App() {
   const [notes1, setNotes1] = useState([...texts]);
