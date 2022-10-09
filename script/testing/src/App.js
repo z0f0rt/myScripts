@@ -22,7 +22,7 @@ function App() {
   }
 
   return (
-    <div className="flex-container">
+    <div className="App">
       <MyList className="left" list={notes1} onElemClick={func1} />
       <MyList className="right" list={notes2} onElemClick={func2} />
     </div>

@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.container1 {
+  display: flex;
+  width: 100%;
+  margin-top: 0px;
+  border-bottom: solid 2px;
+  border-color: black;
+  height: 105px;
+  line-height: 105px;
+}
+.container2 {
+  display: flex;
+  width: 90%;
+}
+.logo {
+  flex-basis: auto;
+  flex-shrink: 1;
+}
+.basket {
+  white-space: nowrap;
+  overflow: hidden;
+  flex-basis: 10%;
+  flex-shrink: 3;
+}
+.WindowProducts {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  height: 100%;
+  padding-right: 0px;
+  justify-content: space-around
+}
+.prod1 {
+  width: 30%;
+  height: 30%;
+  padding-bottom: 150px;
+  padding-left: 30px;
+  text-align: center;
+  margin-top: 100px;
+}
+.prod2 {
+  height: 30%;
+  text-align: center;
+  margin-top: 100px;
+  width: 295px;
+}
+.prod3 {
+  height: 30%;
+  text-align: center;
+  margin-top: 100px;
+  margin-right: 0px;
+  width: 295px;
+}
+.prod4 {
+  width: 325px;
+  height: 30%;
+  padding-bottom: 150px;
+  padding-left: 30px;
+  text-align: center;
+ 
+}
+.prod5 {
+  width: 295px;
+  height: 30%;
+  text-align: center;
+}
+.prod6 {
+  width: 295px;
+  height: 30%;
+  text-align: center;
+  margin-right: 0px;
+}
