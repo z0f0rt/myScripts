@@ -9,8 +9,12 @@ function App() {
   function sum() {
     setCount(count + 1);
   }
-   function minus() {
-    setCount(count - 1);
+  function minus() {
+    if (count >= 1) {
+      setCount(count - 1);
+    } else {
+      setCount(count);
+    }
   }
   return (
     <div className="App">
@@ -28,6 +32,7 @@ function App() {
         prod6="prod6"
         count={count}
         setCount={setCount}
+        minus={minus}
       />
     </div>
   );

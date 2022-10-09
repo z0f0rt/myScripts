@@ -8,6 +8,8 @@ import screen from "./screen.jpg";
 export function Products(props) {
   return (
     <div className={props.WindowProducts}>
+
+
       <div className={props.prod1}>
         <img src={phone} width="100" height="100" />
         <br />
@@ -17,8 +19,11 @@ export function Products(props) {
         <br />
         <button onClick={() => props.setCount(props.count + 1)}>+</button>
         <div>{props.count}</div>
-        <button onClick={() => props.setCount(props.count - 1)}>-</button>
+        <button onClick={props.minus}>-</button>
       </div>
+
+
+
       <div className={props.prod2}>
         <img src={camera} width="100" height="100" />
         <br />
@@ -28,8 +33,11 @@ export function Products(props) {
         <br />
         <button onClick={() => props.setCount(props.count + 1)}>+</button>
         <div>{props.count}</div>
-        <button onClick={() => props.setCount(props.count - 1)}>-</button>
+        <button onClick={props.minus}>-</button>
       </div>
+
+
+
       <div className={props.prod3}>
         <img src={notebook} width="100" height="100" />
         <br />
@@ -39,8 +47,11 @@ export function Products(props) {
         <br />
         <button onClick={() => props.setCount(props.count + 1)}>+</button>
         <div>{props.count}</div>
-        <button onClick={() => props.setCount(props.count - 1)}>-</button>
+        <button onClick={props.minus}>-</button>
       </div>
+
+
+
       <div className={props.prod4}>
         <img src={viteshka} width="100" height="100" />
         <br />
@@ -50,8 +61,10 @@ export function Products(props) {
         <br />
         <button onClick={() => props.setCount(props.count + 1)}>+</button>
         <div>{props.count}</div>
-        <button onClick={() => props.setCount(props.count - 1)}>-</button>
+        <button onClick={props.minus}>-</button>
       </div>
+
+
       <div className={props.prod5}>
         <img src={shurik} width="100" height="100" />
         <br />
@@ -61,8 +74,11 @@ export function Products(props) {
         <br />
         <button onClick={() => props.setCount(props.count + 1)}>+</button>
         <div>{props.count}</div>
-        <button onClick={() => props.setCount(props.count - 1)}>-</button>
+        <button onClick={props.minus}>-</button>
       </div>
+
+      
+
       <div className={props.prod6}>
         <img src={screen} width="100" height="100" />
         <br />
@@ -72,7 +88,7 @@ export function Products(props) {
         <br />
         <button onClick={() => props.setCount(props.count + 1)}>+</button>
         <div>{props.count}</div>
-        <button onClick={() => props.setCount(props.count - 1)}>-</button>
+        <button onClick={props.minus}>-</button>
       </div>
     </div>
   );
