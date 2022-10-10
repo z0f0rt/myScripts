@@ -17,7 +17,7 @@ export function Products(props) {
         Смартфон Samsung Galaxy Z Fold4 512 ГБ бежевый
         <br />
         <br />
-        <button onClick={() => props.setCount(props.count + 1)}>+</button>
+        <button onClick={props.sum}>+</button>
         <div>{props.count}</div>
         <button onClick={props.minus}>-</button>
       </div>
@@ -31,7 +31,7 @@ export function Products(props) {
         Экшн-камера GoPro HERO 11 Black Edition черный
         <br />
         <br />
-        <button onClick={() => props.setCount(props.count + 1)}>+</button>
+        <button onClick={props.sum}>+</button>
         <div>{props.count}</div>
         <button onClick={props.minus}>-</button>
       </div>
@@ -45,7 +45,7 @@ export function Products(props) {
         17.3" Ноутбук MSI GT77 Titan 12UHS-066RU черный
         <br />
         <br />
-        <button onClick={() => props.setCount(props.count + 1)}>+</button>
+        <button onClick={props.sum}>+</button>
         <div>{props.count}</div>
         <button onClick={props.minus}>-</button>
       </div>
@@ -59,7 +59,7 @@ export function Products(props) {
         Вытяжка каминная Kaiser AT 6433 Eco серебристый/черный
         <br />
         <br />
-        <button onClick={() => props.setCount(props.count + 1)}>+</button>
+        <button onClick={props.sum}>+</button>
         <div>{props.count}</div>
         <button onClick={props.minus}>-</button>
       </div>
@@ -72,7 +72,7 @@ export function Products(props) {
         Дрель-шуруповерт DeWalt XRP DCD996P2 XR18V
         <br />
         <br />
-        <button onClick={() => props.setCount(props.count + 1)}>+</button>
+        <button onClick={props.sum}>+</button>
         <div>{props.count}</div>
         <button onClick={props.minus}>-</button>
       </div>
@@ -86,7 +86,7 @@ export function Products(props) {
         31.5" Монитор Samsung Odyssey G7 C32G75TQSI черный
         <br />
         <br />
-        <button onClick={() => props.setCount(props.count + 1)}>+</button>
+        <button onClick={props.sum}>+</button>
         <div>{props.count}</div>
         <button onClick={props.minus}>-</button>
       </div>

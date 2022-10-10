@@ -33,6 +33,7 @@ function App() {
         count={count}
         setCount={setCount}
         minus={minus}
+        sum={sum}
       />
     </div>
   );
