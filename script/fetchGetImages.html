@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<body>
+    <div id="root"></div>
+    <script>
+const root = document.getElementById("root");
+
+function getObjects(url) {
+  return fetch(url)
+    .then((res) => {
+      return res.json();
+    })
+    .then((objects) => {
+      return objects.data;
+    });
+}
+
+function getNames() {
+    const contents = document.createElement('h1')
+    contents.innerHTML = 'table of contents'
+    root.append(contents)
+  getObjects("https://reqres.in/api/unknown").then((arr) => {
+    [...arr].forEach((v, i) => {
+      const newElem = document.createElement("div");
+      newElem.innerHTML =i+1 + '.' +v.name;
+      root.append(newElem);
+    });
+  });
+}
+getNames();
+
+
+
+// function getData(url) {
+//   return fetch(url)
+//     .then((res) => {
+//       return res.json();
+//     })
+//     .then((objects) => {
+//       return objects.data;
+//     });
+// }
+
+// function getPhotos() {
+//     const contents = document.createElement('h1')
+//     contents.innerHTML = 'photos'
+//     root.append(contents)
+//   getData("https://reqres.in/api/users?page=2").then((arr) => {
+//     [...arr].forEach((v, i) => {
+//       const newElem = document.createElement("div");
+//       newElem.innerHTML =i+1 + '.' + v.first_name + v.last_name;
+//       root.append(newElem)
+//     });
+//   });
+// }
+// getPhotos();
+
+
+
+
+
+    </script>
+</body>
+</html>

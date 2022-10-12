@@ -24,7 +24,7 @@
         });
       }
 
-      function kek() {
+      function getBook() {
         fetchBible("https://www.abibliadigital.com.br/api/books").then(
           (res) => {
             // console.log(res);
@@ -39,7 +39,7 @@
           }
         );
       }
-      kek();
+      getBook();
 
       function getChapters(chapters, abbrev) {
         root.innerHTML = "";
@@ -50,7 +50,7 @@
 
           btn.onclick = () => {
             root.innerHTML = "";
-            kek();
+            getBook();
           };
           theNewElem.onclick = () => {
             getVerse(abbrev, i+1, chapters);
@@ -63,11 +63,10 @@
         fetchBible(
           `https://www.abibliadigital.com.br/api/verses/bbe/${abbrev}/${chapter}`
         ).then((res) => {
-          let kek = res.verses;
-          // console.log(kek.length);
-          for (let i = 0; i < kek.length; i++) {
+          let verses = res.verses;
+          for (let i = 0; i < verses.length; i++) {
             const newElem = document.createElement("div");
-            newElem.innerHTML = kek[i].text;
+            newElem.innerHTML = verses[i].text;
             root.append(newElem);
           }
           btn.onclick = () => {
