@@ -7,15 +7,16 @@
   <body>
     <div class="flex-container">
       <div class="title">
-        <div class="kek"></div>
-        <div class="one"></div>
-        <div class="two"></div>
-        <div class="three"></div>
-        <div class="fore"></div>
-        <div class="five"></div>
-        <div class="six"></div>
-        <div class="seven"></div>
+        <h1>Книги</h1>
+        <p class="one"></p>
+        <p class="two"></p>
+        <p class="three"></p>
+        <p class="fore"></p>
+        <p class="five"></p>
+        <p class="six"></p>
+        <p class="seven"></p>
       </div>
+      <h1>Описание:</h1>
       <div class="discription" id="dis"></div>
     </div>
     <script>
@@ -56,65 +57,76 @@
             "Ведьмак — это мастер меча и мэтр волшебства, ведущий непрерыв-ную войну с кровожадными монстрами, которые угрожают покою сказочной страны. «Ведьмак» — это мир на острие меча, ошеломляющее действие, незабываемые ситуации, великолепные боевые сцены.",
         },
       ];
-      let one = document.querySelector(".one");
-      let two = document.querySelector(".two");
-      let three = document.querySelector(".three");
-      let fore = document.querySelector(".fore");
-      let five = document.querySelector(".five");
-      let six = document.querySelector(".six");
-      let seven = document.querySelector(".seven");
       let discription = document.querySelector(".discription");
+      let paragraphs = document.querySelectorAll("p");
+      [...paragraphs].forEach((e, i) => {
+        e.innerHTML = arr[i].title;
+        e.addEventListener("mouseover", () => {
+          discription.textContent = arr[i].discr;
+        });
+        e.addEventListener("mouseout", () => {
+          discription.textContent = "";
+        });
+      });
+      // let one = document.querySelector(".one");
+      // let two = document.querySelector(".two");
+      // let three = document.querySelector(".three");
+      // let fore = document.querySelector(".fore");
+      // let five = document.querySelector(".five");
+      // let six = document.querySelector(".six");
+      // let seven = document.querySelector(".seven");
+      // let discription = document.querySelector(".discription");
 
-      one.innerHTML = arr[0].title;
-      two.innerHTML = arr[1].title;
-      three.innerHTML = arr[2].title;
-      fore.innerHTML = arr[3].title;
-      five.innerHTML = arr[4].title;
-      six.innerHTML = arr[5].title;
-      seven.innerHTML = arr[6].title;
+      // one.innerHTML = arr[0].title;
+      // two.innerHTML = arr[1].title;
+      // three.innerHTML = arr[2].title;
+      // fore.innerHTML = arr[3].title;
+      // five.innerHTML = arr[4].title;
+      // six.innerHTML = arr[5].title;
+      // seven.innerHTML = arr[6].title;
 
-      one.addEventListener("mouseover", () => {
-        discription.textContent = arr[0].discr;
-      });
-      one.addEventListener("mouseout", () => {
-        discription.textContent = "";
-      });
-      two.addEventListener("mouseover", () => {
-        discription.textContent = arr[1].discr;
-      });
-      two.addEventListener("mouseout", () => {
-        discription.textContent = "";
-      });
-      three.addEventListener("mouseover", () => {
-        discription.textContent = arr[2].discr;
-      });
-      three.addEventListener("mouseout", () => {
-        discription.textContent = "";
-      });
-      fore.addEventListener("mouseover", () => {
-        discription.textContent = arr[3].discr;
-      });
-      fore.addEventListener("mouseout", () => {
-        discription.textContent = "";
-      });
-      five.addEventListener("mouseover", () => {
-        discription.textContent = arr[4].discr;
-      });
-      five.addEventListener("mouseout", () => {
-        discription.textContent = "";
-      });
-      six.addEventListener("mouseover", () => {
-        discription.textContent = arr[5].discr;
-      });
-      six.addEventListener("mouseout", () => {
-        discription.textContent = "";
-      });
-      seven.addEventListener("mouseover", () => {
-        discription.textContent = arr[6].discr;
-      });
-      seven.addEventListener("mouseout", () => {
-        discription.textContent = "";
-      });
+      // one.addEventListener("mouseover", () => {
+      //   discription.textContent = arr[0].discr;
+      // });
+      // one.addEventListener("mouseout", () => {
+      //   discription.textContent = "";
+      // });
+      // two.addEventListener("mouseover", () => {
+      //   discription.textContent = arr[1].discr;
+      // });
+      // two.addEventListener("mouseout", () => {
+      //   discription.textContent = "";
+      // });
+      // three.addEventListener("mouseover", () => {
+      //   discription.textContent = arr[2].discr;
+      // });
+      // three.addEventListener("mouseout", () => {
+      //   discription.textContent = "";
+      // });
+      // fore.addEventListener("mouseover", () => {
+      //   discription.textContent = arr[3].discr;
+      // });
+      // fore.addEventListener("mouseout", () => {
+      //   discription.textContent = "";
+      // });
+      // five.addEventListener("mouseover", () => {
+      //   discription.textContent = arr[4].discr;
+      // });
+      // five.addEventListener("mouseout", () => {
+      //   discription.textContent = "";
+      // });
+      // six.addEventListener("mouseover", () => {
+      //   discription.textContent = arr[5].discr;
+      // });
+      // six.addEventListener("mouseout", () => {
+      //   discription.textContent = "";
+      // });
+      // seven.addEventListener("mouseover", () => {
+      //   discription.textContent = arr[6].discr;
+      // });
+      // seven.addEventListener("mouseout", () => {
+      //   discription.textContent = "";
+      // });
     </script>
   </body>
 </html>

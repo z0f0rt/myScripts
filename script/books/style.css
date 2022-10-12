@@ -1,56 +1,80 @@
+* {
+  margin: 0px;
+  bottom: 0px;
+  background-color: #ccc;
+}
 .flex-container {
   display: flex;
   width: 100%;
-  background-color: rgb(214, 211, 210);
 }
 .title {
   flex-basis: 66%;
   flex-shrink: 1;
   text-align: center;
-  
 }
 .discription {
+  margin-top:50px;
+  bottom-top: 20px;
+  text-align: center;
   flex-basis: 33%;
   flex-shrink: 3;
-  
 }
 .one {
-  margin-top: 5%;
+  margin-top: 20px;
   margin-right: 20px;
-  border: solid blueviolet;
+  margin-left: 20px;
+  padding-top:5px;
+  padding-bottom:5px;
+  border: solid black 2px;
 }
 .two {
   margin-top: 3%;
-  border: solid blueviolet;
+  margin-left: 20px;
+  padding-top:5px;
+  padding-bottom:5px;
+  border: solid black 2px;
   margin-right: 20px;
 }
 .three {
   margin-top: 3%;
-  border: solid blueviolet;
+  margin-left: 20px;
+  padding-top:5px;
+  padding-bottom:5px;
+  border: solid black 2px;
   margin-right: 20px;
 }
 .fore {
   margin-top: 3%;
-  border: solid blueviolet;
+  margin-left: 20px;
+  padding-top:5px;
+  padding-bottom:5px;
+  border: solid black 2px;
   margin-right: 20px;
 }
 .five {
   margin-top: 3%;
-  border: solid blueviolet;
+  margin-left: 20px;
+  padding-top:5px;
+  padding-bottom:5px;
+  border: solid black 2px;
   margin-right: 20px;
 }
 .six {
   margin-top: 3%;
-  border: solid blueviolet;
+  margin-left: 20px;
+  padding-top:5px;
+  padding-bottom:5px;
+  border: solid black 2px;
   margin-right: 20px;
 }
 .seven {
   margin-top: 3%;
-  border: solid blueviolet;
+  margin-left: 20px;
+  padding-top:5px;
+  padding-bottom:5px;
+  border: solid black 2px;
   margin-right: 20px;
 }
-.kek {
+.h1 {
   text-align: center;
-  border: solid blueviolet;
-  margin-right: 20px;
 }
