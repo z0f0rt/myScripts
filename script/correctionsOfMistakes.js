@@ -201,28 +201,28 @@
 
 //=========================================================================
 
-// let num = 11;
-// if (!(num > 10 && num < 99)) {
-//   console.log("Внимаение: num не входит в диапозон от 10 до 99");
-// }
-// if (num > 10 && num < 99) {
-//   let string = String(num);
-//   let x = string.split("");
-//   let num1;
-//   let summ = 0;
-//   for (let i = 0; i < x.length; i++) {
-//     num1 = Number(x[i]);
-//     x[i] = num1;
-//     summ = summ + x[i];
-//   }
-//   console.log("Сумма цифр числа входящего в диапозон от 10 до 99: " + summ);
-//   if (summ > 9 && summ <= 99) {
-//     console.log("Cумма цифр двузначна");
-//   }
-//   if (summ < 9) {
-//     console.log("Cумма цифр однозначна");
-//   }
-// }
+let num = 11;
+if (!(num > 10 && num < 99)) {
+  console.log("Внимаение: num не входит в диапозон от 10 до 99");
+}
+if (num > 10 && num < 99) {
+  let string = String(num);
+  let x = string.split("");
+  let num1;
+  let summ = 0;
+  for (let i = 0; i < x.length; i++) {
+    num1 = Number(x[i]);
+    x[i] = num1;
+    summ = summ + x[i];
+  }
+  console.log("Сумма цифр числа входящего в диапозон от 10 до 99: " + summ);
+  if (summ > 9 && summ <= 99) {
+    console.log("Cумма цифр двузначна");
+  }
+  if (summ < 9) {
+    console.log("Cумма цифр однозначна");
+  }
+}
 
 //=========================================================================
 
@@ -293,16 +293,16 @@
 // console.log(`Старый масиив:${array}`);
 // console.log(`Новый массив: ${newArray}`);
 
-// let array = [4, 2, 6, 1, 0, -9, 892, 1, -154];
-// let sum = 0;
-// for (let i = 0; i < array.length; i++) {
-//   if (array[i] < 0) {
-//     break;
-//   } else {
-//     sum = sum + array[i];
-//   }
-// }
-// console.log(sum);
+let array = [4, 2, 6, 1, 0, -9, 892, 1, -154];
+let sum = 0;
+for (let i = 0; i < array.length; i++) {
+  if (array[i] < 0) {
+    break;
+  } else {
+    sum = sum + array[i];
+  }
+}
+console.log(sum);
 
 // let array = [10, 24, 66, 6, 8, -9, 8, 16, 54];
 // let sum = 0;
@@ -376,17 +376,17 @@
 
 //=========================================================================
 
-//11 12 13 21 22 23 31 32 33
-// let str = "";
-// for (let i = 11; i <= 33; i += 10) {
-//   str = "";
-//   for (let j = 0; j <= 2; j++) {
-//     let num = i + j;
-//     console.log(num + " ");
-//   }
-// }
+// 11 12 13 21 22 23 31 32 33
+let str = "";
+for (let i = 11; i <= 33; i += 10) {
+  str = "";
+  for (let j = 0; j <= 2; j++) {
+    let num = i + j;
+    console.log(num + " ");
+  }
+}
 
-//=========================================================================
+// =========================================================================
 
 // let arr = [];
 // for (let i = 0; i < 10; i++) {
@@ -394,22 +394,22 @@
 // }
 // console.log(arr);
 
-// let arr = ["a", "b", "c", "d", "e"];
-// for (let i = arr.length - 1; i >= 0; i--) {
-//   if (arr[i] == arr[0 - 1]) {
-//     break;
-//   } else {
-//     arr.push(arr[i]);
-//   }
-// }
-// for (let i = 0; i < arr.length; i++) {
-//   if (arr[i] === arr[5]) {
-//     break;
-//   } else {
-//     arr.shift(arr[i]);
-//   }
-// }
-// console.log(arr);
+let arr = ["a", "b", "c", "d", "e"];
+for (let i = arr.length - 1; i >= 0; i--) {
+  if (arr[i] == arr[0 - 1]) {
+    break;
+  } else {
+    arr.push(arr[i]);
+  }
+}
+for (let i = 0; i < arr.length; i++) {
+  if (arr[i] === arr[5]) {
+    break;
+  } else {
+    arr.shift(arr[i]);
+  }
+}
+console.log(arr);
 
 // let arr1 = ["a", "b", "c", "d", "e"];
 // let a = [];
