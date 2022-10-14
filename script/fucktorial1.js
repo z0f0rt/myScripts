@@ -1,11 +1,12 @@
-function fucktorial(n) {
-  let x = 1;
-  for (x; n > 1; n--) {
-    x *= n;
+let x = 1;
+let y = 7;
+function fucktorial(y) {
+  for (x; y > 1; y--) {
+    x *= y;
   }
   console.log(x);
 }
-fucktorial(7);
+fucktorial(y);
 
 // function fucktorial(n) {
 //   let x = 1;
