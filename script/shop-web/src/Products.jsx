@@ -8,7 +8,7 @@ import screen from "./screen.jpg";
 export function Products(props) {
   return (
     <div className={props.WindowProducts}>
-
+0
 
       <div className={props.prod1}>
         <img src={phone} width="100" height="100" />
