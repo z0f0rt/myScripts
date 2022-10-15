@@ -6,70 +6,150 @@
   display: flex;
   width: 100%;
   margin-top: 0px;
-  border-bottom: solid 2px;
-  border-color: black;
+  border-bottom: solid 6px;
+  background-color: rgb(109, 35, 35);
+  border-color: rgb(172, 167, 167);
   height: 105px;
   line-height: 105px;
 }
 .container2 {
   display: flex;
   width: 90%;
+  align-content: space-between;
 }
 .logo {
   flex-basis: auto;
   flex-shrink: 1;
 }
-.basket {
+.bascket {
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-size: x-large;
   white-space: nowrap;
   overflow: hidden;
   flex-basis: 10%;
   flex-shrink: 3;
 }
-.WindowProducts {
+.WindowProduct1 {
+  background-image: url(background.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
+  width: 100%;
+  height: 100%;
+
+  padding-right: 0px;
+  justify-content: space-around;
+}
+.WindowProduct2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 100%;
   height: 100%;
   padding-right: 0px;
-  justify-content: space-around
+  justify-content: space-around;
 }
 .prod1 {
-  width: 30%;
-  height: 30%;
-  padding-bottom: 150px;
-  padding-left: 30px;
+  font-size: x-large;
+  width: 300px;
+  padding-bottom: 20px;
+  margin-bottom: 150px;
+  margin-left: 30px;
   text-align: center;
   margin-top: 100px;
+  border: solid 4px rgb(109, 35, 35);
+  border-radius: 10%;
+  color: rgb(255, 220, 21);
 }
 .prod2 {
+  font-size: x-large;
   height: 30%;
+  width: 300px;
   text-align: center;
   margin-top: 100px;
   width: 295px;
+  border: solid 4px rgb(109, 35, 35);
+  border-radius: 10%;
+  color: rgb(255, 220, 21);
+  padding-bottom: 20px;
 }
 .prod3 {
+  font-size: x-large;
   height: 30%;
+  width: 300px;
   text-align: center;
   margin-top: 100px;
   margin-right: 0px;
   width: 295px;
+  border: solid 4px rgb(109, 35, 35);
+  border-radius: 10%;
+  color: rgb(255, 220, 21);
+  padding-bottom: 20px;
 }
 .prod4 {
-  width: 325px;
+  font-size: x-large;
+  width: 300px;
   height: 30%;
-  padding-bottom: 150px;
-  padding-left: 30px;
+  margin-bottom: 150px;
+  margin-left: 30px;
   text-align: center;
- 
+  border: solid 4px rgb(109, 35, 35);
+  border-radius: 10%;
+  color: rgb(255, 220, 21);
+  padding-bottom: 20px;
 }
 .prod5 {
-  width: 295px;
+  font-size: x-large;
+  width: 300px;
   height: 30%;
+  margin-bottom: 150px;
   text-align: center;
+  border: solid 4px rgb(109, 35, 35);
+  border-radius: 10%;
+  color: rgb(255, 220, 21);
+  padding-bottom: 20px;
 }
 .prod6 {
-  width: 295px;
+  font-size: x-large;
+  width: 300px;
   height: 30%;
+  margin-bottom: 150px;
   text-align: center;
   margin-right: 0px;
+  border: solid 4px rgb(109, 35, 35);
+  border-radius: 10%;
+  color: rgb(255, 220, 21);
+  padding-bottom: 20px;
+}
+.magazine-name {
+  color: rgb(255, 220, 21);
+}
+.flex-btn {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 100%;
+  height: 19, 09px;
+  justify-content: space-around;
+}
+.btn-right {
+  width: 30px;
+  height: 30px;
+  color: rgb(109, 35, 35);
+  font-size: large;
+  font-size: x-large;
+}
+.btn-left {
+  width: 30px;
+  height: 30px;
+  color: rgb(109, 35, 35);
+  font-size: x-large;
 }
