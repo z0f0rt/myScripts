@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="calcStyle.css">
+</head>
+<body>
+<div id="Box">
+    <input type="text"  placeholder="0" name="" id="input">
+    <br>
+
+    <div id="BoxInside">
+        <input class="operС"  id="operC" type="button" value="C" onclick="clear_C()">
+     <input class="oper"  id="clearOne" type="button" value="⇐" onclick="deleteOne()">
+     
+  
+     <input class="oper" name="data-num" type="button" value="/"onclick="getValue('/')">
+    <br>
+    <input class="btn" name="data-num" type="button" value="7" onclick="getValue(7)">
+    <input class="btn" name="data-num" type="button" value="8" onclick="getValue(8)">
+    <input class="btn" name="data-num" type="button" value="9" onclick="getValue(9)">
+    <input class="oper"name="data-num" type="button" value="*"onclick="getValue('*')">
+    <br>
+    <input class="btn" name="data-num" type="button" value="4" onclick="getValue(4)">
+    <input class="btn" name="data-num" type="button" value="5" onclick="getValue(5)">
+    <input class="btn" name="data-num" type="button" value="6" onclick="getValue(6)">
+    <input class="oper" name="data-num" type="button" value="-"onclick="getValue('-')">
+    <br>
+    <input class="btn" name="data-num" type="button" onclick="getValue(1)" value="1">
+    <input class="btn" name="data-num" type="button" value="2" onclick="getValue(2)">
+    <input class="btn" name="data-num" type="button" value="3" onclick="getValue(3)">
+    <input class="oper" name="data-num" type="button" value="+" onclick="getValue('+')">
+    <br>
+
+    <input class="btn0" name="data-num" type="button" value="0"onclick="getValue(0)">
+    <input class="oper" id="res" type="button" value="=" onclick="getResult()">
+   </div>
+</div>
+
+
+    <script src="calc.js">
+    </script>
+</body>
+</html>

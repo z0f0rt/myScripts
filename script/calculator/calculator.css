@@ -1,0 +1,94 @@
+html {
+    background-image: url(photo.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+
+body {
+    margin: 120px;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+#Box {
+    background-color:rgb(129, 101, 131);
+	width:240px;
+	height:340px;
+	margin:auto;
+    border-radius:15px;
+    margin-top: 8px;
+    border: solid 2px;
+    opacity:0.8;
+    border-color: rgba(34, 8, 54, 0.89);
+
+}
+
+.btn {
+    width: 45px;
+    height: 40px;
+	font-size: 22px;
+    margin: 1px;
+    margin-left: 1px;
+    background-color: rgb(255, 221, 245);
+    border-radius: 8px;
+    border-color: rgba(34, 8, 54, 0.89);
+
+}
+
+.btn0 {
+    width: 147px;
+    height: 40px;
+	font-size: 22px;
+    margin: 1px;
+    margin-left: 1px;
+    background-color: rgb(255, 221, 245);
+    border-radius: 8px;
+    border-color: rgba(34, 8, 54, 0.89);
+
+}
+
+.oper{
+    width: 45px;
+    height: 40px;
+    font-size: 22px;
+    margin: 1px;
+    margin-left: 1px;
+    background-color: rgb(255, 221, 245);
+    border-color: rgba(34, 8, 54, 0.89);
+   
+}
+
+.operС{
+    width: 96px;
+    height: 40px;
+	font-size: 20px;
+    margin: 1px;
+    margin-left: 1px;
+    background-color: rgb(255, 221, 245);
+    border-color: rgba(34, 8, 54, 0.89);
+   
+}
+
+
+#input {
+    background-color: rgb(255, 221, 245);
+    width: 190px;
+    height: 70px;
+    font-size: 25px;
+    border: solid 2px;
+    border-radius: 8px;
+    border-color: rgba(34, 8, 54, 0.89);
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+#BoxInside {  
+margin-top: 15px;
+margin-left: 20px;
+}
