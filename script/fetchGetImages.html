@@ -18,8 +18,8 @@ function getObjects(url) {
 }
 
 function getNames() {
-    const contents = document.createElement('h1')
-    contents.innerHTML = 'table of contents'
+    // const contents = document.createElement('h1')
+    // contents.innerHTML = 'table of contents'
     root.append(contents)
   getObjects("https://reqres.in/api/unknown").then((arr) => {
     [...arr].forEach((v, i) => {
