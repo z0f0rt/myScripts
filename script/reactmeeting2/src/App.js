@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./styles/App.css";
 import PostList from "./components/PostList";
 import MyButton from "./components/UI/Button/MyButton";
@@ -15,12 +15,21 @@ function App() {
   ]);
 
   const [title, setTitle] = useState("");
+  const [body, setBody] = useState("");
 
   const addNewPost = (event) => {
     event.preventDefault();
-    console.log(title);
+    const newPost = {
+      id: Date.now(),
+      title,
+      body,
+    };
+    setPosts([...posts, newPost]);
+    console.log(newPost)
+    setTitle("");
+    setBody("");
   };
-
+  // эта функция предотвращает ДЕФОЛТНОЕ ПОВЕДЕНИЕБРАУЗЕРА
   return (
     <div className="App">
       <form>
@@ -30,8 +39,13 @@ function App() {
           type="text"
           placeholder="Название поста"
         />
-        <MyInput type="text" placeholder="Описание поста" />
-        <MyButton >Создать пост</MyButton>
+        <MyInput
+          value={body}
+          onChange={(e) => setBody(e.target.value)}
+          type="text"
+          placeholder="Описание поста"
+        />
+        <MyButton onClick={addNewPost}>Создать пост</MyButton>
       </form>
       <PostList posts={posts} title="Посты про JS" />
     </div>
