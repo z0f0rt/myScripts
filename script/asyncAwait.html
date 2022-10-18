@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="root"></div>
+
+
+    <script>
+        // let div = document.querySelector("#root");
+
+//         function fetchX(url){
+//  return fetch(url).then((result) => result.json())
+//    }
+
+//    function getColors(){
+//     fetchX("https://reqres.in/api/unknown").then((res) => res.data)
+//      .then((result) => {
+//         [...result].forEach((elem,i) =>{
+//             let p = document.createElement("p");
+//             p.innerHTML =  i+1 + '. ' +elem.name;
+//             div.append(p);
+//         })
+//      })
+
+//    }
+
+//    getColors();
+
+
+// =====================
+// async/await
+let div = document.querySelector("#root");
+
+// 1
+// async function getColor(){
+//     const response = await fetch("https://reqres.in/api/unknown")
+//     const dat = await response.json()
+//     // .then((res)=>res.data)   - вместо цепочки then => await
+
+//     const objs = await dat.data
+
+//     console.log(objs);
+
+// // далее обрабатываем объекты в этой же функции!?
+//     [...objs].forEach((elem,i) =>{
+//             let p = document.createElement("p");
+//             p.innerHTML =  i+1 + '. ' +elem.name;
+//             div.append(p);
+//         })
+// }
+// getColor();
+
+
+
+// 2
+// async function getUser() {
+//   return {}
+// }
+// console.log(getUser())
+// getUser().then(response => console.log(response))
+
+
+// 3
+// async function f() {
+//   return 1;
+// }
+// f().then(alert); // 1
+
+
+// 4
+
+async function f() {
+let promise = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("готово!"), 3000)
+});
+let result = await promise; // будет ждать, пока промис не выполнится (*)
+alert(result); // "готово!"
+}
+
+f();
+
+
+
+    </script>
+
+</body>
+</html>

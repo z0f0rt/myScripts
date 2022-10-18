@@ -10,8 +10,8 @@ import shurik from "./shurik.jpg";
 import viteshka from "./viteshka.jpg";
 import screen from "./screen.jpg";
 import sorry from "./sorry.png";
-import { Solution } from "./Solution";
-import { Routes, Route, Link } from "react-router-dom";
+// import { Solution } from "./Solution";
+// import { Routes, Route, Link } from "react-router-dom";
 
 function App() {
   const [count1, setCount1] = useState(0);
@@ -29,17 +29,9 @@ function App() {
 
   return (
     <div className="App">
-      <div className="container1">
-        <Head className="logo" />
-
-        <Link to="/Solution">
-          <div className="bascket"> ({bascketValue}) Корзина</div>
-        </Link>
-      </div>
-
-      <Routes>
-        <Route path="/Solution" element={<Solution />} />
-      </Routes>
+    
+        <Head className="logo" bascketValue={bascketValue} />
+      
 
       <div className="WindowProduct1">
         <Product

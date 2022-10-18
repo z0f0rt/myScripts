@@ -24,7 +24,7 @@ function getNames() {
   getObjects("https://reqres.in/api/unknown").then((arr) => {
     [...arr].forEach((v, i) => {
       const newElem = document.createElement("div");
-      newElem.innerHTML =i+1 + '.' +v.name;
+      newElem.innerHTML = i+1 + '.' +v.name;
       root.append(newElem);
     });
   });

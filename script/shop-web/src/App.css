@@ -2,33 +2,27 @@
   margin: 0;
   padding: 0;
 }
-.container1 {
+.container2 {
   display: flex;
-  width: 100%;
-  margin-top: 0px;
   border-bottom: solid 6px;
   background-color: rgb(109, 35, 35);
   border-color: rgb(172, 167, 167);
   height: 105px;
   line-height: 105px;
-}
-.container2 {
-  display: flex;
-  width: 90%;
-  align-content: space-between;
+  width: 100%;
+  justify-content: space-between;
 }
 .logo {
-  flex-basis: auto;
-  flex-shrink: 1;
+
+}
+.magazine-name {
+  color: rgb(255, 220, 21);
 }
 .bascket {
-  text-align: center;
   color: rgb(0, 0, 0);
   font-size: x-large;
-  white-space: nowrap;
-  overflow: hidden;
-  flex-basis: 10%;
-  flex-shrink: 3;
+  margin-right: 20px;
+  
 }
 .WindowProduct1 {
   background-image: url(background.jpg);
@@ -129,9 +123,7 @@
   color: rgb(255, 220, 21);
   padding-bottom: 20px;
 }
-.magazine-name {
-  color: rgb(255, 220, 21);
-}
+
 .flex-btn {
   display: flex;
   flex-wrap: wrap;
