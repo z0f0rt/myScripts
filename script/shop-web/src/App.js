@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./App.css";
 import { useState } from "react";
 import { products } from "./constants/products";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { Layout } from "./Layout";
 import { Products } from "./Products";
 import { Basket } from "./Basket";
@@ -34,7 +34,7 @@ function App() {
             <Products setCountForIndex={setCountForIndex} countAll={countAll} />
           }
         />
-        <Route path={LINKS.BASKET} element={<Basket setCountForIndex={setCountForIndex} countAll={countAll}/>} />
+        <Route path={LINKS.BASKET} element={<Basket setCountForIndex={setCountForIndex} countAll={countAll} setCountAll={setCountAll}/>} />
       </Route>
     </Routes>
   );
