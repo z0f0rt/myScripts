@@ -73,17 +73,22 @@ let div = document.querySelector("#root");
 
 // 4
 
-async function f() {
-let promise = new Promise((resolve, reject) => {
-  setTimeout(() => resolve("готово!"), 3000)
-});
-let result = await promise; // будет ждать, пока промис не выполнится (*)
-alert(result); // "готово!"
+// async function f() {
+// let promise = new Promise((resolve, reject) => {
+//   setTimeout(() => resolve("готово!"), 3000)
+// });
+// let result = await promise; // будет ждать, пока промис не выполнится (*)
+// alert(result); // "готово!"
+// }
+
+// f();
+
+
+const delay = ms =>{
+    return new Promise(r=>setTimeout(()=>r('Ура!'), ms))
 }
 
-f();
-
-
+delay(2000).then(alert)
 
     </script>
 

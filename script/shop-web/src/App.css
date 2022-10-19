@@ -13,7 +13,6 @@
   justify-content: space-between;
 }
 .logo {
-
 }
 .magazine-name {
   color: rgb(255, 220, 21);
@@ -22,7 +21,6 @@
   color: rgb(0, 0, 0);
   font-size: x-large;
   margin-right: 20px;
-  
 }
 .WindowProduct1 {
   background-image: url(background.jpg);
@@ -51,79 +49,23 @@
   padding-right: 0px;
   justify-content: space-around;
 }
-.prod1 {
+.prod {
   font-size: x-large;
-  width: 300px;
-  padding-bottom: 20px;
+  width: 30%;
+justify-content: center;
   margin-bottom: 150px;
-  margin-left: 30px;
-  text-align: center;
   margin-top: 100px;
-  border: solid 4px rgb(109, 35, 35);
-  border-radius: 10%;
   color: rgb(255, 220, 21);
+  box-sizing: border-box;
+  display: flex;
 }
-.prod2 {
-  font-size: x-large;
-  height: 30%;
-  width: 300px;
-  text-align: center;
-  margin-top: 100px;
-  width: 295px;
-  border: solid 4px rgb(109, 35, 35);
-  border-radius: 10%;
-  color: rgb(255, 220, 21);
+.prod-inner {
   padding-bottom: 20px;
-}
-.prod3 {
-  font-size: x-large;
-  height: 30%;
-  width: 300px;
   text-align: center;
-  margin-top: 100px;
-  margin-right: 0px;
-  width: 295px;
+  width: 300px;
   border: solid 4px rgb(109, 35, 35);
   border-radius: 10%;
-  color: rgb(255, 220, 21);
-  padding-bottom: 20px;
 }
-.prod4 {
-  font-size: x-large;
-  width: 300px;
-  height: 30%;
-  margin-bottom: 150px;
-  margin-left: 30px;
-  text-align: center;
-  border: solid 4px rgb(109, 35, 35);
-  border-radius: 10%;
-  color: rgb(255, 220, 21);
-  padding-bottom: 20px;
-}
-.prod5 {
-  font-size: x-large;
-  width: 300px;
-  height: 30%;
-  margin-bottom: 150px;
-  text-align: center;
-  border: solid 4px rgb(109, 35, 35);
-  border-radius: 10%;
-  color: rgb(255, 220, 21);
-  padding-bottom: 20px;
-}
-.prod6 {
-  font-size: x-large;
-  width: 300px;
-  height: 30%;
-  margin-bottom: 150px;
-  text-align: center;
-  margin-right: 0px;
-  border: solid 4px rgb(109, 35, 35);
-  border-radius: 10%;
-  color: rgb(255, 220, 21);
-  padding-bottom: 20px;
-}
-
 .flex-btn {
   display: flex;
   flex-wrap: wrap;
@@ -144,4 +86,27 @@
   height: 30px;
   color: rgb(109, 35, 35);
   font-size: x-large;
+}
+.bascket-products{
+  text-align: center;
+}
+.name-basket{
+  color: black;
+}
+.btn-left-basket{
+color: black;
+width: 30px;
+  height: 30px;
+  height: 19, 09px;
+  justify-content: space-around;
+}
+.btn-right-basket{
+  color: black;
+width: 30px;
+  height: 30px;
+  height: 19, 09px;
+  justify-content: space-around;
+}
+.count-basket{
+  color: black;
 }

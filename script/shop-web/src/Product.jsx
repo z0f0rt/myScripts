@@ -1,4 +1,4 @@
-
+import sorry from "./sorry.png";
 export function Product(props) {
 
   function incr() {
@@ -12,8 +12,9 @@ export function Product(props) {
     }
   }
   return (
-      <div className={props.className}>
-        <img src={props.item} width="170" height="170" alt={props.sorry}/>
+    <div className='prod'> 
+      <div className='prod-inner'>
+        <img src={props.item} width="170" height="170" alt={sorry}/>
         <br />
         <br />
         {props.name}
@@ -24,6 +25,7 @@ export function Product(props) {
         <div>{props.count}</div>
         <button className="btn-left" onClick={decr}>-</button>
         </div>
+      </div>
       </div>
   );
 
