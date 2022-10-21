@@ -22,7 +22,14 @@ export function BasketProduct(props) {
             <button className="btn-left-basket" onClick={decr}>
               -
             </button>
-            <button className="delete-btn">Удалить</button>
+            <button
+              className="delete-btn"
+              onClick={() => {
+                props.setCount(undefined);
+              }}
+            >
+              Удалить
+            </button>
           </div>
         </div>
       </div>

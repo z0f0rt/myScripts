@@ -5,9 +5,10 @@ export function Basket(props) {
   return (
     <div className="basket-products">
       {products.map((el, i) => {
-        if (props.countAll[i] > 0) {
+        if (props.countAll[i] !== undefined) {
           return (
             <BasketProduct
+              key={i}
               name={el.name}
               item={el.image}
               count={props.countAll[i] || 0}
@@ -15,6 +16,7 @@ export function Basket(props) {
             />
           );
         }
+        return null;
       })}
     </div>
   );

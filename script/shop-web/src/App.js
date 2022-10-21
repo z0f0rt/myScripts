@@ -12,7 +12,7 @@ function App() {
   const [countAll, setCountAll] = useState([]);
 
   useEffect(() => {
-    const countAllInit = products.map(() => 0);
+    const countAllInit = products.map(() => undefined);
     setCountAll(countAllInit);
   }, []);
 
@@ -22,8 +22,11 @@ function App() {
   };
 
   let bascketValue = countAll.reduce((acc, v) => {
+    if (v === undefined) {
+      return acc;
+    }
     return acc + v;
-  },0);
+  }, 0);
 
   return (
     <Routes>
@@ -34,7 +37,12 @@ function App() {
             <Products setCountForIndex={setCountForIndex} countAll={countAll} />
           }
         />
-        <Route path={LINKS.BASKET} element={<Basket setCountForIndex={setCountForIndex} countAll={countAll} setCountAll={setCountAll}/>} />
+        <Route
+          path={LINKS.BASKET}
+          element={
+            <Basket setCountForIndex={setCountForIndex} countAll={countAll} />
+          }
+        />
       </Route>
     </Routes>
   );
