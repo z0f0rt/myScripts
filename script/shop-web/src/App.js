@@ -11,6 +11,8 @@ import { LINKS } from "./constants/links";
 function App() {
   const [countAll, setCountAll] = useState([]);
 
+  localStorage.clear();
+
   useEffect(() => {
     const countAllInit = products.map(() => undefined);
     setCountAll(countAllInit);
@@ -27,6 +29,8 @@ function App() {
     }
     return acc + v;
   }, 0);
+
+  // bascketValue для подсчётка сверху счётчика у корзины
 
   return (
     <Routes>

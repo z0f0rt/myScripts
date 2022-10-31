@@ -1,8 +1,10 @@
 import sorry from "./sorry.png";
 export function Product(props) {
+  
   function incr() {
     props.setCount(props.count + 1);
   }
+
   function decr() {
     if (props.count > 1) {
       props.setCount(props.count - 1);

@@ -1,11 +1,11 @@
 import { products } from "./constants/products";
 import { BasketProduct } from "./BasketProduct";
-
 export function Basket(props) {
   return (
     <div className="basket-products">
       {products.map((el, i) => {
         if (props.countAll[i] !== undefined) {
+          localStorage.setItem(`number${i}`, JSON.stringify(el));
           return (
             <BasketProduct
               key={i}

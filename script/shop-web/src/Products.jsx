@@ -1,5 +1,6 @@
 import { Product } from "./Product";
 import { products } from "./constants/products";
+
 export function Products(props) {
   return (
     <div className="WindowProduct1">
