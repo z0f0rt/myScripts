@@ -146,3 +146,19 @@ html {
 .prod-inner-basket {
   display: flex;
 }
+.flex-basket {
+  display: flex;
+}
+.basket-score {
+  text-align: right;
+  margin-right: 25%;
+  margin-top: 20px;
+  font-size: x-large;
+}
+.basket-items {
+  text-align: right;
+  margin-left: 50%;
+  margin-top: 20px;
+  font-size: x-large;
+  padding-right: 35px;
+}

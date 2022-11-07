@@ -1,11 +1,14 @@
 import { products } from "./constants/products";
 import { BasketProduct } from "./BasketProduct";
+
 export function Basket(props) {
+  let finalScore = 0;
   return (
     <div className="basket-products">
       {products.map((el, i) => {
-        if (props.countAll[i] !== undefined) {
-          localStorage.setItem(`number${i}`, JSON.stringify(el));
+        if (props.countAll[i] !== undefined && props.countAll[i] !== null ) {
+          let each = el.price * props.countAll[i];
+          finalScore = finalScore + each;
           return (
             <BasketProduct
               key={i}
@@ -18,6 +21,10 @@ export function Basket(props) {
         }
         return null;
       })}
+      <div className = 'flex-basket'>
+      <div className="basket-items">Выбрано товаров:{props.bascketValue}</div>
+      <div className="basket-score">Итого:{finalScore}</div>
+      </div>
     </div>
   );
 }

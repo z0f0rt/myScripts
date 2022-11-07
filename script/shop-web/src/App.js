@@ -11,10 +11,13 @@ import { LINKS } from "./constants/links";
 function App() {
   const [countAll, setCountAll] = useState([]);
 
-  localStorage.clear();
-
   useEffect(() => {
+    const countAll = localStorage.getItem("countAll");
     const countAllInit = products.map(() => undefined);
+    if (countAll) {
+      setCountAll(JSON.parse(countAll));
+      return;
+    }
     setCountAll(countAllInit);
   }, []);
 
@@ -23,6 +26,8 @@ function App() {
     setCountAll([...countAll]);
   };
 
+  console.log(countAll);
+
   let bascketValue = countAll.reduce((acc, v) => {
     if (v === undefined) {
       return acc;
@@ -30,11 +35,12 @@ function App() {
     return acc + v;
   }, 0);
 
-  // bascketValue для подсчётка сверху счётчика у корзины
-
   return (
     <Routes>
-      <Route path="/" element={<Layout bascketValue={bascketValue} />}>
+      <Route
+        path="/"
+        element={<Layout bascketValue={bascketValue} countAll={countAll} />}
+      >
         <Route
           index
           element={
@@ -44,7 +50,11 @@ function App() {
         <Route
           path={LINKS.BASKET}
           element={
-            <Basket setCountForIndex={setCountForIndex} countAll={countAll} />
+            <Basket
+              setCountForIndex={setCountForIndex}
+              countAll={countAll}
+              bascketValue={bascketValue}
+            />
           }
         />
       </Route>

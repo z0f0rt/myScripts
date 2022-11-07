@@ -17,7 +17,16 @@ export function Head(props) {
         <h1>OpelsTechnic</h1>
       </div>
       <Link to={LINKS.BASKET}>
-        <div className="bascket"> ({props.bascketValue}) Корзина</div>
+        <div
+          className="bascket"
+          onClick={() => {
+            console.log(props.countAll);
+            localStorage.setItem("countAll", JSON.stringify(props.countAll));
+          }}
+        >
+          {" "}
+          ({props.bascketValue}) Корзина
+        </div>
       </Link>
     </div>
   );

@@ -1,6 +1,6 @@
 import sorry from "./sorry.png";
+
 export function Product(props) {
-  
   function incr() {
     props.setCount(props.count + 1);
   }
@@ -15,7 +15,7 @@ export function Product(props) {
   return (
     <div className="prod">
       <div className="prod-inner">
-        <img src={props.item} width="170" height="170" alt={sorry} />
+          <img src={props.item} width="170" height="170" alt={sorry} />
         <br />
         <br />
         {props.name}
