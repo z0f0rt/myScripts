@@ -8,8 +8,10 @@ import { Products } from "./Products";
 import { Basket } from "./Basket";
 import { LINKS } from "./constants/links";
 
+
 function App() {
   const [countAll, setCountAll] = useState([]);
+
 
   useEffect(() => {
     const countAll = localStorage.getItem("countAll");
