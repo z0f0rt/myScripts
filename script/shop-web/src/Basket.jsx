@@ -3,6 +3,7 @@ import { BasketProduct } from "./BasketProduct";
 
 export function Basket(props) {
   let finalScore = 0;
+  
   return (
     <div className="basket-products">
       {products.map((el, i) => {

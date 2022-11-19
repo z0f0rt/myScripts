@@ -1,9 +1,9 @@
 "use strict";
 
-function sum(n) {
-    console.log(n);
+function sum(b) {
+  console.log(b);
   return function (a) {
-    return sum(a + n);
+    return sum(b + a);
   };
 }
 sum(2)(10)(15)(3);

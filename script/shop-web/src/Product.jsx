@@ -12,10 +12,11 @@ export function Product(props) {
       props.setCount(undefined);
     }
   }
+
   return (
     <div className="prod">
       <div className="prod-inner">
-          <img src={props.item} width="170" height="170" alt={sorry} />
+        <img src={props.item} width="170" height="170" alt={sorry} />
         <br />
         <br />
         {props.name}
