@@ -1,7 +1,18 @@
 import { Link } from "react-router-dom";
 import { LINKS } from "./constants/links";
 import icon from "./logo.jpg";
+import { useSelector } from "react-redux";
+
 export function Head(props) {
+  const count = useSelector((state) => state.counters.count);
+
+  let bascketValue = count.reduce((acc, v) => {
+    if (v === undefined) {
+      return acc;
+    }
+    return acc + v;
+  }, 0);
+  
   return (
     <div className="container2">
       <Link to={LINKS.HOME}>
@@ -20,12 +31,12 @@ export function Head(props) {
         <div
           className="bascket"
           onClick={() => {
-            console.log(props.countAll);
-            localStorage.setItem("countAll", JSON.stringify(props.countAll));
+            console.log(count);
+            localStorage.setItem("count", JSON.stringify(count));
           }}
         >
           {" "}
-          ({props.bascketValue}) Корзина
+          ({bascketValue}) Корзина
         </div>
       </Link>
     </div>

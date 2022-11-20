@@ -25,11 +25,11 @@ function App() {
       body,
     };
     setPosts([...posts, newPost]);
-    console.log(newPost)
+    console.log(newPost);
     setTitle("");
     setBody("");
   };
-  // эта функция предотвращает ДЕФОЛТНОЕ ПОВЕДЕНИЕБРАУЗЕРА
+  
   return (
     <div className="App">
       <form>

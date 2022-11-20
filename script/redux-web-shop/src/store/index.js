@@ -5,6 +5,8 @@ import { thirdReducer } from "./thirdCountReducer";
 import { fourthReducer } from "./fourthCountReducer";
 import { fifthReducer } from "./fifthCountReducer";
 import { sixthReducer } from "./sixthCountReducer";
+
+
 const rootReducer = combineReducers({
   first: firstReducer,
   second: secondReducer,

@@ -1,30 +1,46 @@
 import { products } from "./constants/products";
 import { BasketProduct } from "./BasketProduct";
+import { useSelector, useDispatch } from "react-redux";
 
-export function Basket(props) {
+export function Basket() {
   let finalScore = 0;
-  
+  const count = useSelector((state) => state.counters.count);
+  const dispatch = useDispatch();
+
+  const setCountForIndex = (i, count) => {
+    dispatch({ type: "SETCOUNTFORINDEX", payload: { index: i, count: count } });
+    // countAll[i] = count;
+    // setCountAll([...countAll]);
+  };
+
+  let bascketValue = count.reduce((acc, v) => {
+    if (v === undefined) {
+      return acc;
+    }
+    return acc + v;
+  }, 0);
+
   return (
     <div className="basket-products">
       {products.map((el, i) => {
-        if (props.countAll[i] !== undefined && props.countAll[i] !== null ) {
-          let each = el.price * props.countAll[i];
+        if (count[i] !== undefined && count[i] !== null) {
+          let each = el.price * count[i];
           finalScore = finalScore + each;
           return (
             <BasketProduct
               key={i}
               name={el.name}
               item={el.image}
-              count={props.countAll[i] || 0}
-              setCount={(count) => props.setCountForIndex(i, count)}
+              count={count[i] || 0}
+              setCount={(count) => setCountForIndex(i, count)}
             />
           );
         }
         return null;
       })}
-      <div className = 'flex-basket'>
-      <div className="basket-items">Выбрано товаров:{props.bascketValue}</div>
-      <div className="basket-score">Итого:{finalScore}</div>
+      <div className="flex-basket">
+        <div className="basket-items">Выбрано товаров:{bascketValue}</div>
+        <div className="basket-score">Итого:{finalScore}</div>
       </div>
     </div>
   );
