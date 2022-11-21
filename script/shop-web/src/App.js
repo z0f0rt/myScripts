@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import "./App.css";
-// import { products } from "./constants/products";
 import { Routes, Route } from "react-router-dom";
 import { Layout } from "./Layout";
 import { Products } from "./Products";
@@ -16,15 +15,14 @@ function App() {
   }
 
   useEffect(() => {
-    const products = productsFetch("http://localhost:5000");
-    products.then((res) => {
-      
-    });
     const countLocal = localStorage.getItem("count");
     const countParse = JSON.parse(countLocal);
-    dispatch({
-      type: "INIT",
-      payload: { initCounts: products.length, local: countParse },
+    const products = productsFetch("http://localhost:5000");
+    products.then((res) => {
+      dispatch({
+        type: "INIT",
+        payload: { initCounts: res.length, local: countParse },
+      });
     });
   }, []);
 
