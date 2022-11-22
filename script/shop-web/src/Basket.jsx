@@ -1,4 +1,3 @@
-import { products } from "./constants/products";
 import { BasketProduct } from "./BasketProduct";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -6,11 +5,10 @@ export function Basket() {
   let finalScore = 0;
   const count = useSelector((state) => state.counters.count);
   const dispatch = useDispatch();
+  const products = useSelector((state) => state.prodProps.products);
 
   const setCountForIndex = (i, count) => {
     dispatch({ type: "SETCOUNTFORINDEX", payload: { index: i, count: count } });
-    // countAll[i] = count;
-    // setCountAll([...countAll]);
   };
 
   let bascketValue = count.reduce((acc, v) => {

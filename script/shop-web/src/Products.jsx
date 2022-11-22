@@ -1,11 +1,10 @@
 import { Product } from "./Product";
-import { products } from "./constants/products";
 import { useSelector, useDispatch } from "react-redux";
 
 export function Products() {
   const count = useSelector((state) => state.counters.count);
   const dispatch = useDispatch();
-
+  const products = useSelector((state) => state.prodProps.products);
   const setCountForIndex = (i, count) => {
     dispatch({ type: "SETCOUNTFORINDEX", payload: { index: i, count: count } });
     // countAll[i] = count;
