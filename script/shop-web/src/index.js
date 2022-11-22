@@ -10,10 +10,24 @@ const initState = {
   count: [],
 };
 
+const startProducts = {
+  products: [],
+};
+
+const productsProp = (state = startProducts, action) => {
+  switch (action.type) {
+    case "PRODUCTS":
+      state.products = action.payload;
+      return { ...state, products: [...state.products] };
+    default:
+      return state;
+  }
+};
+
 const productsCounterReducer = (state = initState, action) => {
   switch (action.type) {
     case "INIT":
-      if(action.payload.local){
+      if (action.payload.local) {
         return { ...state, count: action.payload.local };
       }
       let newCount = [];
@@ -21,12 +35,12 @@ const productsCounterReducer = (state = initState, action) => {
         newCount.push(undefined);
       }
       return { ...state, count: newCount };
-    case "INCREMENT":
-      state.count[action.payload] += 1;
-      return { ...state, count: [...state.count] };
-    case "DECREMENT":
-      state.count[action.payload] -= 1;
-      return { ...state, count: [...state.count] };
+    // case "INCREMENT":
+    //   state.count[action.payload] += 1;
+    //   return { ...state, count: [...state.count] };
+    // case "DECREMENT":
+    //   state.count[action.payload] -= 1;
+    //   return { ...state, count: [...state.count] };
     case "SETCOUNTFORINDEX":
       state.count[action.payload.index] = action.payload.count;
       return { ...state, count: [...state.count] };
@@ -37,6 +51,7 @@ const productsCounterReducer = (state = initState, action) => {
 
 const rootReducer = combineReducers({
   counters: productsCounterReducer,
+  prodProps: productsProp,
 });
 
 const store = createStore(rootReducer);
