@@ -26,7 +26,7 @@ export function Basket() {
           finalScore = finalScore + each;
           return (
             <BasketProduct
-              key={i}
+              key={products.id}
               name={el.name}
               item={el.image}
               count={count[i] || 0}

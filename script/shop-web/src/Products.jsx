@@ -7,8 +7,6 @@ export function Products() {
   const products = useSelector((state) => state.prodProps.products);
   const setCountForIndex = (i, count) => {
     dispatch({ type: "SETCOUNTFORINDEX", payload: { index: i, count: count } });
-    // countAll[i] = count;
-    // setCountAll([...countAll]);
   };
 
   return (
@@ -16,7 +14,7 @@ export function Products() {
       {products.map((el, i) => {
         return (
           <Product
-            key={i}
+            key={products.id}
             name={el.name}
             item={el.image}
             count={count[i] || 0}

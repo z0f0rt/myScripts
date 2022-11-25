@@ -19,6 +19,7 @@ function App() {
     const countParse = JSON.parse(countLocal);
     const products = productsFetch("http://localhost:5000");
     products.then((res) => {
+      console.log(res);
       dispatch({ type: "PRODUCTS", payload: res });
       dispatch({
         type: "INIT",

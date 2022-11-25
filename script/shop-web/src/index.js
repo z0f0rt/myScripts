@@ -35,12 +35,12 @@ const productsCounterReducer = (state = initState, action) => {
         newCount.push(undefined);
       }
       return { ...state, count: newCount };
-    // case "INCREMENT":
-    //   state.count[action.payload] += 1;
-    //   return { ...state, count: [...state.count] };
-    // case "DECREMENT":
-    //   state.count[action.payload] -= 1;
-    //   return { ...state, count: [...state.count] };
+    case "INCREMENT":
+      state.count[action.payload] += 1;
+      return { ...state, count: [...state.count] };
+    case "DECREMENT":
+      state.count[action.payload] -= 1;
+      return { ...state, count: [...state.count] };
     case "SETCOUNTFORINDEX":
       state.count[action.payload.index] = action.payload.count;
       return { ...state, count: [...state.count] };
