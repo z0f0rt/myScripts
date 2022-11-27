@@ -1,24 +1,28 @@
 import { Product } from "./Product";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector} from "react-redux";
 
 export function Products() {
-  const count = useSelector((state) => state.counters.count);
-  const dispatch = useDispatch();
+ 
+
   const products = useSelector((state) => state.prodProps.products);
-  const setCountForIndex = (i, count) => {
-    dispatch({ type: "SETCOUNTFORINDEX", payload: { index: i, count: count } });
-  };
+
+  // const setCountForIndex = (i, count) => {
+  //   dispatch({ type: "SETCOUNTFORINDEX", payload: { index: i, count: count } });
+  // };
+  // const count = useSelector((state) => state.counters.count);
 
   return (
     <div className="WindowProduct1">
       {products.map((el, i) => {
         return (
           <Product
-            key={products.id}
+            index={i}
+            key={el.id}
+            id={el.id}
             name={el.name}
             item={el.image}
-            count={count[i] || 0}
-            setCount={(count) => setCountForIndex(i, count)}
+            // count={count[i] || 0}
+            // setCount={(count) => setCountForIndex(i, count)}
           />
         );
       })}

@@ -23,7 +23,7 @@ function App() {
       dispatch({ type: "PRODUCTS", payload: res });
       dispatch({
         type: "INIT",
-        payload: { initCounts: res.length, local: countParse },
+        payload: countParse,
       });
     });
   }, []);

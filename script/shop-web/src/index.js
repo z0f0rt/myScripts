@@ -5,6 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { createStore, combineReducers } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
 
 const initState = {
   count: [],
@@ -27,23 +28,27 @@ const productsProp = (state = startProducts, action) => {
 const productsCounterReducer = (state = initState, action) => {
   switch (action.type) {
     case "INIT":
-      if (action.payload.local) {
-        return { ...state, count: action.payload.local };
+      if (action.payload) {
+        return { ...state, count: action.payload };
       }
       let newCount = [];
-      for (let i = 0; i < action.payload; i++) {
-        newCount.push(undefined);
-      }
       return { ...state, count: newCount };
     case "INCREMENT":
-      state.count[action.payload] += 1;
+      let counterDecrement = state.count.find((el) => el.id === action.payload);
+      if (!counterDecrement) {
+        let objectI = { count: 1, id: action.payload };
+        return { ...state, count: [...state.count, objectI] };
+      }
+      counterDecrement.count++;
       return { ...state, count: [...state.count] };
     case "DECREMENT":
-      state.count[action.payload] -= 1;
-      return { ...state, count: [...state.count] };
-    case "SETCOUNTFORINDEX":
-      state.count[action.payload.index] = action.payload.count;
-      return { ...state, count: [...state.count] };
+      let counterIncrement = state.count.find((el) => el.id === action.payload);
+      if (counterIncrement && counterIncrement.count >= 1) {
+        counterIncrement.count--;
+        return { ...state, count: [...state.count] };
+      }
+      let objectD = { count: 0, id: action.payload };
+      return { ...state, count: [...state.count, objectD] };
     default:
       return state;
   }
@@ -54,7 +59,7 @@ const rootReducer = combineReducers({
   prodProps: productsProp,
 });
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, composeWithDevTools());
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

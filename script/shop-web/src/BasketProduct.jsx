@@ -1,14 +1,34 @@
+import { useSelector, useDispatch } from "react-redux";
 export function BasketProduct(props) {
+  // function incr() {
+  //   props.setCount(props.count + 1);
+  // }
+  // function decr() {
+  //   if (props.count >= 1) {
+  //     props.setCount(props.count - 1);
+  //   } else {
+  //     props.setCount(props.count);
+  //   }
+  // }
+
+  const dispatch = useDispatch();
+
   function incr() {
-    props.setCount(props.count + 1);
+    dispatch({ type: "INCREMENT", payload: props.id });
   }
+
   function decr() {
-    if (props.count >= 1) {
-      props.setCount(props.count - 1);
-    } else {
-      props.setCount(props.count);
-    }
+    dispatch({ type: "DECREMENT", payload: props.id });
   }
+
+  const count = useSelector((state) => {
+    let findCounter = state.counters.count.find((el) => el.id === props.id);
+    if (!findCounter) {
+      return 0;
+    }
+    return findCounter.count;
+  });
+
   return (
     <div className="flex-wrapper">
       <div className="prod-basket">
@@ -18,7 +38,7 @@ export function BasketProduct(props) {
             <button className="btn-right-basket" onClick={incr}>
               +
             </button>
-            <div className="count-basket">{props.count}</div>
+            <div className="count-basket">{count}</div>
             <button className="btn-left-basket" onClick={decr}>
               -
             </button>

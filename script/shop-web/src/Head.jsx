@@ -7,12 +7,12 @@ export function Head(props) {
   const count = useSelector((state) => state.counters.count);
 
   let bascketValue = count.reduce((acc, v) => {
-    if (v === undefined) {
+    if (v.count === undefined) {
       return acc;
     }
-    return acc + v;
+    return acc + v.count;
   }, 0);
-  
+
   return (
     <div className="container2">
       <Link to={LINKS.HOME}>

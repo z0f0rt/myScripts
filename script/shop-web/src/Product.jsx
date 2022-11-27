@@ -1,17 +1,25 @@
 import sorry from "./sorry.png";
+import { useSelector, useDispatch } from "react-redux";
 
 export function Product(props) {
+
+  const dispatch = useDispatch();
+
   function incr() {
-    props.setCount(props.count + 1);
+    dispatch({ type: "INCREMENT", payload: props.id });
   }
 
   function decr() {
-    if (props.count > 1) {
-      props.setCount(props.count - 1);
-    } else {
-      props.setCount(undefined);
-    }
+    dispatch({ type: "DECREMENT", payload: props.id });
   }
+
+  const count = useSelector((state) => {
+    let findCounter = state.counters.count.find((el) => el.id === props.id);
+    if (!findCounter) {
+      return 0;
+    }
+    return findCounter.count;
+  });
 
   return (
     <div className="prod">
@@ -26,9 +34,17 @@ export function Product(props) {
           <button className="btn-right" onClick={incr}>
             +
           </button>
-          <div>{props.count}</div>
+          <div>{count}</div>
           <button className="btn-left" onClick={decr}>
             -
+          </button>
+          <button
+            className="delete-btn-main"
+            onClick={() => {
+              props.setCount(undefined);
+            }}
+          >
+            Удалить
           </button>
         </div>
       </div>
