@@ -2,14 +2,14 @@ import { POST } from "./constants.js";
 export const products = [
   {
     name: "Смартфон Samsung Galaxy Z Fold4 512 ГБ бежевый",
-    image: `http://localhost:${POST}/static/images/phone.jpg`,
+    image: `http://localhost:${POST}/static/images/phone.png`,
     price: 117565,
     id: 1,
   },
 
   {
     name: "Экшн-камера GoPro HERO 11 Black Edition черный",
-    image: `http://localhost:${POST}/static/images/camera.jpg`,
+    image: `http://localhost:${POST}/static/images/camera.png`,
     price: 28699,
     id: 2,
   },
