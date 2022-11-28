@@ -49,6 +49,9 @@ const productsCounterReducer = (state = initState, action) => {
       }
       let objectD = { count: 0, id: action.payload };
       return { ...state, count: [...state.count, objectD] };
+    case "DELETE":
+      let counterDelete = state.count.filter((el) => el.id !== action.payload);
+      return { ...state, count: [...counterDelete] };
     default:
       return state;
   }
