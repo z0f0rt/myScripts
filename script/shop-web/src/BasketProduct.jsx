@@ -1,16 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
 export function BasketProduct(props) {
-  // function incr() {
-  //   props.setCount(props.count + 1);
-  // }
-  // function decr() {
-  //   if (props.count >= 1) {
-  //     props.setCount(props.count - 1);
-  //   } else {
-  //     props.setCount(props.count);
-  //   }
-  // }
-
   const dispatch = useDispatch();
 
   function incr() {
@@ -29,6 +18,9 @@ export function BasketProduct(props) {
     return findCounter.count;
   });
 
+function deleteEl() {
+  dispatch({type: 'DELETE', payload: props.id})
+}
   return (
     <div className="flex-wrapper">
       <div className="prod-basket">
@@ -44,9 +36,7 @@ export function BasketProduct(props) {
             </button>
             <button
               className="delete-btn"
-              onClick={() => {
-                props.setCount(undefined);
-              }}
+              onClick={deleteEl}
             >
               Удалить
             </button>

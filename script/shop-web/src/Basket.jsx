@@ -8,10 +8,6 @@ export function Basket() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.prodProps.products);
 
-  // const setCountForIndex = (i, count) => {
-  //   dispatch({ type: "SETCOUNTFORINDEX", payload: { index: i, count: count } });
-  // };
-
   let bascketValue = count.reduce((acc, v) => {
     if (v.count === undefined) {
       return acc;
@@ -20,19 +16,19 @@ export function Basket() {
   }, 0);
 
   let productsFilter = products.filter((el) => {
-    // return count.some((countEl) => countEl.id === el.id);
-    for (let i = 0; i < count.length; i++) {
-      if (el.id === count[i].id) {
-        return true;
-      }
-    }
-    return false;
+    return count.some((countEl) => countEl.id === el.id);
+  //   for (let i = 0; i < count.length; i++) {
+  //     if (el.id === count[i].id) {
+  //       return true;
+  //     }
+  //   }
+  //   return false;
   });
 
   return (
     <div className="basket-products">
       {productsFilter.map(
-        (el) => {
+        (el) =>{
           return (
             <BasketProduct
               key={el.id}

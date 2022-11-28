@@ -2,7 +2,6 @@ import sorry from "./sorry.png";
 import { useSelector, useDispatch } from "react-redux";
 
 export function Product(props) {
-
   const dispatch = useDispatch();
 
   function incr() {
@@ -21,6 +20,9 @@ export function Product(props) {
     return findCounter.count;
   });
 
+  function deleteEl() {
+    dispatch({ type: "DELETE", payload: props.id });
+  }
   return (
     <div className="prod">
       <div className="prod-inner">
@@ -38,12 +40,7 @@ export function Product(props) {
           <button className="btn-left" onClick={decr}>
             -
           </button>
-          <button
-            className="delete-btn-main"
-            onClick={() => {
-              props.setCount(undefined);
-            }}
-          >
+          <button className="delete-btn-main" onClick={deleteEl}>
             Удалить
           </button>
         </div>
