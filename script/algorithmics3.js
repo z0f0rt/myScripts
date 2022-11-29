@@ -3,13 +3,39 @@
 
 let arr = [2, 8, 8, 1, 4, 8, 9, 2];
 
-let res = arr.reduce((acc, v, i, arr) => {
-  for (; i < arr.length; i++) {
-    if (v === arr[i + 1]) {
-      acc.push(v);
+// let res = arr.reduce((acc, v, i, arr) => {
+
+//   return acc;
+// }, []);
+// console.log(res);
+
+let findEl = (array, v) => {
+  for (let i = 0; i < array.length; i++) {
+    if (v === array[i]) {
+      return true;
     }
   }
+  return false;
+};
 
-  return acc;
-}, []);
-console.log(res);
+let findElInConsiquiens = (array, index) => {
+  for (let i = index + 1; i < array.length; i++) {
+    if (array[index] === array[i]) {
+      return true;
+    }
+  }
+  return false;
+};
+
+let newArr = [];
+for (let k = 0; k < arr.length; k++) {
+  let isExist = findEl(newArr, arr[k]);
+  if (isExist) {
+    continue;
+  }
+  let isExistInNext = findElInConsiquiens(arr, k);
+  if (isExistInNext) {
+    newArr.push(arr[k]);
+  }
+}
+console.log(newArr);

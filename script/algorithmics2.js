@@ -9,7 +9,6 @@ let res = arr.reduce((acc, v, i, arr) => {
       acc.push(v);
     }
   }
-
   return acc;
 }, []);
 
