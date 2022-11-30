@@ -28,7 +28,7 @@ function myForEach(func, array, item) {
     item = func(array, item);
   }
 }
-let func = (item) => console.log(item);
+let func = item => console.log(item);
 myForEach(func, humans);
 
 // humans.myForEach((item) => {
