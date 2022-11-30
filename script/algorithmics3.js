@@ -3,12 +3,6 @@
 
 let arr = [2, 8, 8, 1, 4, 8, 9, 2];
 
-// let res = arr.reduce((acc, v, i, arr) => {
-
-//   return acc;
-// }, []);
-// console.log(res);
-
 let findEl = (array, v) => {
   for (let i = 0; i < array.length; i++) {
     if (v === array[i]) {
