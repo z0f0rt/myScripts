@@ -3,9 +3,11 @@
 // Последним элементов в каждом подмассиве, является значение по правую сторону от знака "="
 
 let parOfSyst1 = [
-  [1, 13, 43, 2],
-  [3, 56, 12, 7],
-  [39, 72, 4, 14],
+  [1, 13, 43, 3, 2, 7],
+  [3, 56, 12, 2, 7, 3],
+  [39, 72, 4, 1, 14, 2],
+  [1, 2, 3, 4, 5, 6],
+  [6, 5, 4, 3, 2, 1],
 ];
 
 const determinant = (m) =>
@@ -36,12 +38,17 @@ const changeColumn = (anymatrix, par, whichCol) => {
   return kek;
 };
 
-const secChangeColumn = (mainDet, matrix, par, callback) => {
+const secChangeColumn = (mainDet, matrix, par) => {
   let array = [];
   for (let i = 0; i < matrix.length; i++) {
-    let kek = [[...matrix[0]], [...matrix[1]], [...matrix[2]]];
-    let res = callback(kek, par, i);
-    let otherDeterminates = determinant(res);
+    let absoluteMatrixCopy = [];
+    for (let j = 0; j < matrix.length; j++) {
+      let container = [...matrix[j]];
+      absoluteMatrixCopy.push(container);
+    }
+
+    let changedMatrixs = changeColumn(absoluteMatrixCopy, par, i);
+    let otherDeterminates = determinant(changedMatrixs);
     let kramersSquads = otherDeterminates / mainDet;
     array.push(kramersSquads);
   }
@@ -65,13 +72,7 @@ let kramer = (m) => {
     return `Cистема имеет бесконечно много решений или несовместна!
     В этом случае правило Крамера не поможет!`;
   }
-  let det = secChangeColumn(mainDet, copyMatrix, m, changeColumn);
-
-  for (let i = 0; i < det.length; i++) {
-    let sq = `Корень уравнения ${i + 1}: ${det[i]}`;
-    console.log(sq);
-  }
-
+  let det = secChangeColumn(mainDet, copyMatrix, m);
   return det;
 };
 
