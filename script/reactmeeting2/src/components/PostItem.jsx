@@ -1,6 +1,9 @@
 import React from "react";
 
 function PostItem(props) {
+
+
+  
   return (
     <div className="post">
       <div className="post__content">
