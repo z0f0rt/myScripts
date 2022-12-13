@@ -1,7 +1,7 @@
-import React, { useState, useRef } from "react";
+import React, { useState} from "react";
 import "./styles/App.css";
 import PostList from "./components/PostList";
-import { PostForm } from "./components/UI/PostForm";
+import { PostForm } from "./components/PostForm";
 // import PostItem from "./components/PostItem";
 // import Counter from "./components/Counter";
 
@@ -13,18 +13,22 @@ function App() {
     { id: 4, title: "JavaScript 4", body: "Description4" },
   ]);
 
- 
+  const createPost = (newPost) => {
+    setPosts([...posts, newPost]);
+  };
 
-  const addNewPost = (event) => {
-    event.preventDefault();
-    setPosts([...posts, { ...post, id: Date.now() }]);
-    setPost({ title: "", body: "" });
+  const deletePost = (post) => {
+    setPosts(posts.filter((e) => e.id !== post.id));
   };
 
   return (
     <div className="App">
-      <PostForm />
-      <PostList posts={posts} title="Посты про JS" />
+      <PostForm create={createPost} />
+      {posts.length !== 0 ? (
+        <PostList deletePost={deletePost} posts={posts} title="Посты про JS" />
+      ) : (
+        <h1 style={{ textAlign: "center" }}>Постов нет!</h1>
+      )}
     </div>
   );
 }
