@@ -15,11 +15,13 @@ const determinant = (m) =>
       );
 
 let a = [
-  [3, -2, 4],
-  [3, 4, -2],
-  [2, -1, -1],
+  [3, -2, 4, 1],
+  [3, 4, -2, 1],
+  [2, -1, -1, 3],
+  [1, 3, 4, 5],
 ];
-let b = [[21], [9], [10]];
+
+let b = [[21], [9], [10], [8]];
 
 const variablesX = (matrix) => {
   let X = [];
@@ -28,9 +30,6 @@ const variablesX = (matrix) => {
   }
   return X;
 };
-let x = variablesX(a);
-
-let matrixDeterminant = determinant(a);
 
 const minusColonka = (matrix, kakaiaKolonka) => {
   let absoluteMatrixCopy = [];
@@ -38,38 +37,24 @@ const minusColonka = (matrix, kakaiaKolonka) => {
     let container = [...matrix[j]];
     absoluteMatrixCopy.push(container);
   }
-
   let kek = [];
   for (let i = 0; i < absoluteMatrixCopy.length; i++) {
     absoluteMatrixCopy[i].splice(kakaiaKolonka, 1);
     kek.push(absoluteMatrixCopy[i]);
   }
   return kek;
-  // let emptyArr = [];
-  // for (let i = 0; i < kek.length; i++) {
-  //   emptyArr.push(kek);
-  // }
-  // return emptyArr;
 };
 
-const minusRiad = (matrix, column) => {
-  matrix.splice(column, 1);
-  return matrix;
-};
 const kek = (matrix, c) => {
-  let jojo = [];
-  for (let j = 0; j < matrix.length; j++) {
-    let copy = [];
-    for (let i = 0; i < matrix.length; i++) {
-      let container = [...matrix[i]];
-      copy.push(container);
-    }
-    copy.splice(c, 1);
-    return copy;
+  let copy = [];
+  for (let i = 0; i < matrix.length; i++) {
+    let container = [...matrix[i]];
+    copy.push(container);
   }
-
-  return jojo;
+  copy.splice(c, 1);
+  return copy;
 };
+
 const nadKek = (matrix) => {
   let matrixOfResMatrix = [];
   for (let i = 0; i < matrix.length; i++) {
@@ -101,7 +86,6 @@ const eta = (matrix) => {
   }
   return arr;
 };
-let matrixOfMinors = eta(a);
 
 const algebrAddon = (matrix) => {
   let ulbi = eta(matrix);
@@ -122,23 +106,21 @@ const algebrAddon = (matrix) => {
   }
   return ulbi;
 };
-let matrixAlgAddons = algebrAddon(a);
 
-const transposeMatrix = (array, arrayLength) => {
+const transposeMatrix = (array) => {
   var newArray = [];
   for (let i = 0; i < array.length; i++) {
     newArray.push([]);
   }
 
   for (let i = 0; i < array.length; i++) {
-    for (let j = 0; j < arrayLength; j++) {
+    for (let j = 0; j < array.length; j++) {
       newArray[j].push(array[i][j]);
     }
   }
 
   return newArray;
 };
-let transMatrix = transposeMatrix(matrixAlgAddons, matrixAlgAddons.length);
 
 const finalRes = (det, matrix) => {
   let result = [];
@@ -153,9 +135,7 @@ const finalRes = (det, matrix) => {
   return result;
 };
 
-let revMatrix = finalRes(matrixDeterminant, transMatrix);
-
-const multiplyMatrix = (matrix1, matrix2, x) => {
+const multiplyMatrix = (matrix1, matrix2) => {
   let result = [];
   for (let i = 0; i < matrix1.length; i++) {
     result[i] = [];
@@ -170,5 +150,11 @@ const multiplyMatrix = (matrix1, matrix2, x) => {
   return result;
 };
 
+let x = variablesX(a);
+let matrixDeterminant = determinant(a);
+let matrixOfMinors = eta(a);
+let matrixAlgAddons = algebrAddon(a);
+let transMatrix = transposeMatrix(matrixAlgAddons);
+let revMatrix = finalRes(matrixDeterminant, transMatrix);
 let tik = multiplyMatrix(revMatrix, b);
 console.log(tik);
