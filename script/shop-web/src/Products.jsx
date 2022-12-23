@@ -14,6 +14,7 @@ export function Products() {
             id={el.id}
             name={el.name}
             item={el.image}
+            price={el.price}
             // count={count[i] || 0}
             // setCount={(count) => setCountForIndex(i, count)}
           />

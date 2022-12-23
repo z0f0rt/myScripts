@@ -30,8 +30,8 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<Products />} />
         <Route path={LINKS.BASKET} element={<Basket />} />
+        <Route index element={<Products />} />
       </Route>
     </Routes>
   );

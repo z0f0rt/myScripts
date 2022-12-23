@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from "react-redux";
 
 export function Product(props) {
   const dispatch = useDispatch();
-
   function incr() {
     dispatch({ type: "INCREMENT", payload: props.id });
   }
@@ -30,6 +29,9 @@ export function Product(props) {
         <br />
         <br />
         {props.name}
+        <br />
+        <br />
+        {props.price} рублей
         <br />
         <br />
         <div className="flex-btn">
