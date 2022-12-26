@@ -15,6 +15,17 @@ const startProducts = {
   products: [],
 };
 
+const numberOfPages = "";
+
+const quantityPages = (state = numberOfPages, action) => {
+  switch (action.type) {
+    case "PAGES":
+      state = action.payload;
+      return state;
+    default:
+      return state;
+  }
+};
 const productsProp = (state = startProducts, action) => {
   switch (action.type) {
     case "PRODUCTS":
@@ -40,6 +51,7 @@ const productsCounterReducer = (state = initState, action) => {
         return { ...state, count: [...state.count, objectI] };
       }
       counterDecrement.count++;
+
       return { ...state, count: [...state.count] };
     case "DECREMENT":
       let counterIncrement = state.count.find((el) => el.id === action.payload);
@@ -60,6 +72,7 @@ const productsCounterReducer = (state = initState, action) => {
 const rootReducer = combineReducers({
   counters: productsCounterReducer,
   prodProps: productsProp,
+  pagersCount: quantityPages,
 });
 
 const store = createStore(rootReducer, composeWithDevTools());

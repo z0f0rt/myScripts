@@ -17,9 +17,15 @@ function App() {
   useEffect(() => {
     const countLocal = localStorage.getItem("count");
     const countParse = JSON.parse(countLocal);
-    const products = productsFetch("http://localhost:5000");
+    const objectFour = { c: 3 };
+    let url = new URL("http://localhost:5000");
+    Object.keys(objectFour).forEach((key) =>
+      url.searchParams.append(key, objectFour[key])
+    );
+    const products = productsFetch(url);
     products.then((res) => {
-      dispatch({ type: "PRODUCTS", payload: res });
+      dispatch({ type: "PAGES", payload: res.howManyPages });
+      dispatch({ type: "PRODUCTS", payload: res.page });
       dispatch({
         type: "INIT",
         payload: countParse,
