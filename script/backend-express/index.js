@@ -17,8 +17,43 @@ app.listen(POST, () => {
   console.log(`Сервер удачно запустился на порте: ${POST}...`);
 });
 
+// app.get("/", (req, res) => {
+//   res.status(200).json(products);
+// });
+
+app.get("/get-new-page", (req, res) => {
+  let thatPageSend = req.query.whichPageSend;
+  const pages = () => {
+    let count = req.query.count;
+    count = Number(count);
+    let arr = [];
+    for (let i = 0; i < products.length; i += count) {
+      let page = products.slice(i, i + count);
+      arr.push(page);
+    }
+    return arr;
+  };
+  let whichPageNeed = pages();
+
+  res.status(200).json({
+    page: whichPageNeed[thatPageSend],
+    howManyPages: whichPageNeed.length,
+  });
+});
+
 app.get("/", (req, res) => {
-  res.status(200).json(products);
+  const pages = () => {
+    let count = req.query.c;
+    count = Number(count);
+    let arr = [];
+    for (let i = 0; i < products.length; i += count) {
+      let page = products.slice(i, i + count);
+      arr.push(page);
+    }
+    return arr;
+  };
+  let firstPage = pages();
+  res.status(200).json({ page: firstPage[0], howManyPages: firstPage.length });
 });
 const filters = [filterLowerPrice, filterUpperPrice];
 
