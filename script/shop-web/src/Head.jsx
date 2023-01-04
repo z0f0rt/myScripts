@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { LINKS } from "./constants/links";
-import icon from "./logo.jpg";
+import logo from "./logo.png";
 import { useSelector } from "react-redux";
 
 export function Head(props) {
@@ -18,15 +18,16 @@ export function Head(props) {
       <Link to={LINKS.HOME}>
         <img
           className={props.className}
-          src={icon}
+          src={logo}
           width="100"
           height="100"
           alt="sorry"
         />
       </Link>
       <div className="magazine-name">
-        <h1>OpelsTechnic</h1>
+        <h1>Device Discount</h1>
       </div>
+      <h3>Its a fine day full of opportunity!</h3>
       <Link to={LINKS.BASKET}>
         <div
           className="bascket"

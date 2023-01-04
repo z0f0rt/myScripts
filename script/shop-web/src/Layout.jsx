@@ -5,7 +5,6 @@ export function Layout() {
   return (
     <div className="App">
       <Head className="logo" />
-
       <Outlet />
     </div>
   );

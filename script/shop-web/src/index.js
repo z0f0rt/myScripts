@@ -26,6 +26,7 @@ const quantityPages = (state = numberOfPages, action) => {
       return state;
   }
 };
+
 const productsProp = (state = startProducts, action) => {
   switch (action.type) {
     case "PRODUCTS":

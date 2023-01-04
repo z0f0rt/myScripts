@@ -17,14 +17,37 @@ app.listen(POST, () => {
   console.log(`Сервер удачно запустился на порте: ${POST}...`);
 });
 
-// app.get("/", (req, res) => {
-//   res.status(200).json(products);
-// });
+const filters = [filterLowerPrice, filterUpperPrice];
 
-app.get("/get-new-page", (req, res) => {
-  let thatPageSend = req.query.whichPageSend;
+app.get("/products", (req, res) => {
+  let count = req.query.count; // сколько элементов должно быть на странице
+  let thatPageSend = req.query.whichPageSend; // какую страницу отправить
+  let first = req.query.first;
+  let second = req.query.second;
+  if(first === undefined && second === undefined){
+
+  }
   const pages = () => {
-    let count = req.query.count;
+    count = Number(count);
+    let arr = [];
+    for (let i = 0; i < products.length; i += count) {
+      let page = products.slice(i, i + count);
+      arr.push(page);
+    }
+    return arr;
+  };
+  let whichPageNeedArr = pages();
+
+  res.status(200).json({
+    page: whichPageNeedArr[thatPageSend],
+    howManyPages: whichPageNeedArr.length,
+  });
+});
+
+app.get("/price-filter", (req, res) => {
+  let count = req.query.count; // сколько элементов должно быть на странице
+  let thatPageSend = req.query.whichPageSend; // какую страницу отправить
+  const pages = () => {
     count = Number(count);
     let arr = [];
     for (let i = 0; i < products.length; i += count) {
@@ -34,41 +57,18 @@ app.get("/get-new-page", (req, res) => {
     return arr;
   };
   let whichPageNeed = pages();
-
-  res.status(200).json({
-    page: whichPageNeed[thatPageSend],
-    howManyPages: whichPageNeed.length,
-  });
-});
-
-app.get("/", (req, res) => {
-  const pages = () => {
-    let count = req.query.c;
-    count = Number(count);
-    let arr = [];
-    for (let i = 0; i < products.length; i += count) {
-      let page = products.slice(i, i + count);
-      arr.push(page);
-    }
-    return arr;
-  };
-  let firstPage = pages();
-  res.status(200).json({ page: firstPage[0], howManyPages: firstPage.length });
-});
-const filters = [filterLowerPrice, filterUpperPrice];
-
-app.get("/price-filter", (req, res) => {
   const filtersAgregator = filtersAgregatorFabric(filters, req);
-  const filterProd = (products) => {
+  const filterProd = (whichPageNeed) => {
     let result = [];
-    for (let i = 0; i < products.length; i++) {
-      if (filtersAgregator(products[i])) {
-        result.push(products[i]);
+    for (let i = 0; i < whichPageNeed.length; i++) {
+      if (filtersAgregator(whichPageNeed[i])) {
+        result.push(whichPageNeed[i]);
       }
     }
     return result;
   };
-  let kek = filterProd(products);
+  let kek = filterProd(whichPageNeed[thatPageSend]);
+  console.log(kek);
   res.status(200).json(kek);
 });
 
