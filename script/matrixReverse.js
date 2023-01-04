@@ -1,18 +1,9 @@
 "use strict";
 
 const determinant = (m) =>
-  m.length == 1
-    ? m[0][0]
-    : m.length == 2
-    ? m[0][0] * m[1][1] - m[0][1] * m[1][0]
-    : m[0].reduce(
-        (acc, el, i) =>
-          acc +
-          (-1) ** (i + 2) *
-            el *
-            determinant(m.slice(1).map((e) => e.filter((_, j) => i != j))),
-        0
-      );
+  m.length == 1? m[0][0] : m.length == 2
+    ? m[0][0] * m[1][1] - m[0][1] * m[1][0] : m[0].reduce((acc, el, i) =>
+      acc +(-1) ** (i + 2) *el *determinant(m.slice(1).map((e) => e.filter((_, j) => i != j))),0);
 
 let a = [
   [3, -2, 4, 1],
