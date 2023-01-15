@@ -1,41 +1,71 @@
 import { Product } from "./Product";
 import { useSelector } from "react-redux";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Page } from "./Page";
 import { ELEMS_PER_PAGE } from "./constants/pagination";
+import { useSearchParams } from "react-router-dom";
 
 export function Products() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [value, setValue] = useState("");
+  const [min, setMin] = useState("");
+  const [max, setMax] = useState("");
+
   const dispatch = useDispatch();
   const products = useSelector((state) => state.prodProps.products);
   const pages = useSelector((state) => state.pagersCount);
 
-  const [firstInput, setFirstInput] = useState("");
-  const [secondInput, setSecondInput] = useState("");
+  console.log(value);
+
+  useEffect(() => {
+    let prevValue = searchParams.get("value");
+    setValue(prevValue);
+    let prevMin = searchParams.get("min");
+    setMin(prevMin);
+    let prevMax = searchParams.get("max");
+    setMax(prevMax);
+  }, []);
 
   function productsFetch(url) {
     return fetch(url).then((res) => res.json());
   }
-  const sendRequiest = () => {
-    const filtersForm = { count: ELEMS_PER_PAGE, whichPageSend: 0 };
-    if (secondInput === "" && firstInput === "") {
+
+  const getProducts = () => {
+    const filtersForm = { count: ELEMS_PER_PAGE, page: 1 };
+    filtersForm.value = value;
+    if (max === "" && min === "") {
       return;
     }
-    if (firstInput !== "") {
-      filtersForm.first = Number(firstInput);
+    if (min !== "") {
+      filtersForm.min = min;
     }
-    if (secondInput !== "") {
-      filtersForm.second = Number(secondInput);
+    if (max !== "") {
+      filtersForm.max = max;
     }
-    // props.setSearchParams(filtersForm);
-    let url = new URL("http://localhost:5000/price-filter");
-    Object.keys(filtersForm).forEach((key) =>
-      url.searchParams.append(key, filtersForm[key])
+    let url = new URL("http://localhost:5000/products");
+
+    Object.keys(filtersForm).forEach(
+      (key) =>
+        filtersForm[key] && url.searchParams.append(key, filtersForm[key])
     );
+
+    searchParams.set("page", 1);
+    
+    if (min !== null) {
+      searchParams.set("min", min);
+    }
+    if (max !== null) {
+      searchParams.set("max", max);
+    }
+    searchParams.set("value", value);
+    setSearchParams(searchParams);
+
     let newProducts = productsFetch(url);
     newProducts.then((res) => {
       console.log(res);
-      dispatch({ type: "PRODUCTS", payload: res });
+      dispatch({ type: "PRODUCTS", payload: res.page });
+      dispatch({ type: "PAGES", payload: res.howManyPages });
     });
   };
 
@@ -46,50 +76,101 @@ export function Products() {
 
   return (
     <div>
-      <div className="form-filter-value">
-      <div className="name-filter-value">Фильтрация по цене</div>
-      <div className="filter-value">
-        <input
-          type="text"
-          value={firstInput}
-          onChange={(e) => setFirstInput(e.target.value)}
-        />{" "}
-        -{" "}
-        <input
-          type="text"
-          value={secondInput}
-          onChange={(e) => setSecondInput(e.target.value)}
-        />{" "}
-        <button onClick={sendRequiest}>Применить</button>
-      </div>
-      </div>
-      <div className="window-product-1">
-        {products.map((el, i) => {
-          return (
-            <Product
-              index={i}
-              key={el.id}
-              id={el.id}
-              name={el.name}
-              item={el.image}
-              price={el.price}
-            />
-          );
-        })}
-      </div>
-      <div className="pagination">
-        {pagesArray.map((el, i) => {
-          return (
-            <Page
-              pageNumber={el}
-              key={i}
-              pages={pages}
-              // searchParams={props.searchParams}
-              // setSearchParams={props.setSearchParams}
-            />
-          );
-        })}
-      </div>
+      {products.length === 0 && pages === 0 ? (
+        <div>
+          <div className="form-filter-value">
+            <div className="name-filter-value">Фильтрация по цене</div>
+            <div className="filter-value">
+              <input
+                type="text"
+                value={min}
+                onChange={(e) => setMin(e.target.value)}
+              />{" "}
+              -{" "}
+              <input
+                type="text"
+                value={max}
+                onChange={(e) => setMax(e.target.value)}
+              />{" "}
+              <button onClick={getProducts}>Применить</button>
+              <div>
+                <select
+                  value={value}
+                  onChange={(e) => {
+                    setValue(e.target.value);
+                  }}
+                >
+                  <option value={""}>НетСортировки</option>
+                  <option value={"ascending"}>По Возрастания</option>
+                  <option value={"descending"}>По Убыванию</option>
+                  <option value={"alphabeticaly"}>По Алфавиту</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          Товары отсутствуют!
+        </div>
+      ) : (
+        <div>
+          <div className="form-filter-value">
+            <div className="name-filter-value">Фильтрация по цене</div>
+            <div className="filter-value">
+              <input
+                type="text"
+                value={min}
+                onChange={(e) => setMin(e.target.value)}
+              />{" "}
+              -{" "}
+              <input
+                type="text"
+                value={max}
+                onChange={(e) => setMax(e.target.value)}
+              />{" "}
+              <button onClick={getProducts}>Применить</button>
+              <div>
+                <select
+                  value={value}
+                  onChange={(e) => {
+                    setValue(e.target.value);
+                  }}
+                >
+                  <option value={""}>НетСортировки</option>
+                  <option value={"ascending"}>По Возрастания</option>
+                  <option value={"descending"}>По Убыванию</option>
+                  <option value={"alphabeticaly"}>По Алфавиту</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div className="window-product-1">
+            {products.map((el, i) => {
+              return (
+                <Product
+                  index={i}
+                  key={el.id}
+                  id={el.id}
+                  name={el.name}
+                  item={el.image}
+                  price={el.price}
+                />
+              );
+            })}
+          </div>
+          <div className="pagination">
+            {pagesArray.map((el, i) => {
+              return (
+                <Page
+                  pageNumber={el}
+                  key={i}
+                  pages={pages}
+                  // searchParams={props.searchParams}
+                  // setSearchParams={props.setSearchParams}
+                />
+              );
+            })}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

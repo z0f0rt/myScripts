@@ -20,19 +20,26 @@ function App() {
   useEffect(() => {
     const countLocal = localStorage.getItem("count");
     const countParse = JSON.parse(countLocal);
-    let kek = searchParams.get("page");
-    console.log(kek);
+
+    let page = searchParams.get("page");
+    let min = searchParams.get("min");
+    let max = searchParams.get("max");
+    let value = searchParams.get("value");
+    console.log(min, max);
     const objForSend = {
       count: ELEMS_PER_PAGE,
-      whichPageSend: 0,
+      page: page || 1,
+      min,
+      max,
+      value,
     };
 
     let url = new URL("http://localhost:5000/products");
-    Object.keys(objForSend).forEach((key) =>
-      url.searchParams.append(key, objForSend[key])
+    Object.keys(objForSend).forEach(
+      (key) => objForSend[key] && url.searchParams.append(key, objForSend[key])
     );
-    const products = productsFetch(url);
 
+    const products = productsFetch(url);
     products.then((res) => {
       dispatch({ type: "PAGES", payload: res.howManyPages });
       dispatch({ type: "PRODUCTS", payload: res.page });
@@ -47,15 +54,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route path={LINKS.BASKET} element={<Basket />} />
-        <Route
-          index
-          element={
-            <Products
-              searchParams={searchParams}
-              setSearchParams={setSearchParams}
-            />
-          }
-        />
+        <Route index element={<Products />} />
       </Route>
     </Routes>
   );
