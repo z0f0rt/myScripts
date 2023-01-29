@@ -65,3 +65,4 @@ const newKek = (state, value, count) => {
   return { ...state, kek: value ** 2, count: count + 1 };
 };
 console.log(newKek(state, value, state.count));
+console.log  (newKek(2,4,5));
