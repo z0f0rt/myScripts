@@ -16,8 +16,6 @@ export function Products() {
   const products = useSelector((state) => state.prodProps.products);
   const pages = useSelector((state) => state.pagersCount);
 
-  console.log(value);
-
   useEffect(() => {
     let prevValue = searchParams.get("value");
     setValue(prevValue);
@@ -51,7 +49,7 @@ export function Products() {
     );
 
     searchParams.set("page", 1);
-    
+
     if (min !== null) {
       searchParams.set("min", min);
     }
