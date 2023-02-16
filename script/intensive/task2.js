@@ -1,15 +1,20 @@
 "use strict";
 const getNumberRadix = (number, radix) => {
+  let correctNumber = +number;
+  let correctRadix = +radix;
   if (
-    !!Number(number) &&
-    Number(number) > 0 &&
-    Number.isInteger(Number(number))
+    typeof correctNumber == "number" &&
+    typeof correctRadix == "number" &&
+    Number.isInteger(correctNumber) &&
+    Number.isInteger(correctRadix) &&
+    correctNumber > 0 &&
+    2 <= correctRadix &&
+    correctRadix <= 16
   ) {
-    if (2 <= radix && radix <= 16 && !!Number(radix)) {
-      return number.toString(radix);
-    }
+    return correctNumber.toString(correctRadix);
   }
-  return "Error!";
+  throw new Error(
+    "Функция getNumberRadix была вызвана с некорректными параметрами"
+  );
 };
 
-console.log(getNumberRadix(4, 2));
