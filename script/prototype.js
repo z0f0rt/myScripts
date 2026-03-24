@@ -1,15 +1,23 @@
 "use strict";
-var animal = {
+
+const animal = {
   eats: true,
-  kek: false,
+  breathee: false,
 };
-var rabbit = {
+
+let rabbit = {
   jumps: true,
 };
 
 rabbit.__proto__ = animal;
 
-// в rabbit можно найти оба свойства
-console.log(animal.jumps); // true
-console.log(animal.eats); // true
-console.log(animal.kek);
+// in rabbit can find both properties (eats && breathe)
+console.log(rabbit.jumps); // true
+console.log(rabbit.eats); // true
+console.log(rabbit.breathe); // false
+
+// analog by spread
+// rabbit = { ...animal, ...rabbit };
+// console.log(rabbit.jumps); // true
+// console.log(rabbit.eats); // true
+// console.log(rabbit.breathe); // false

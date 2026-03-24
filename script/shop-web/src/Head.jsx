@@ -1,27 +1,23 @@
-import { Link } from "react-router-dom";
-import { LINKS } from "./constants/links";
+import {Link} from "react-router-dom";
+import {LINKS} from "./constants/links";
 import logo from "./logo.png";
-import { useSelector } from "react-redux";
+import {useSelector} from "react-redux";
 
 export function Head(props) {
   const count = useSelector((state) => state.counters.count);
 
   let bascketValue = count.reduce((acc, v) => {
-    if (v.count === undefined) {
-      return acc;
-    }
-    return acc + v.count;
+      if (v.count === undefined) {
+          return acc;
+      }
+      return acc + v.count;
   }, 0);
 
   return (
     <div className="container2">
       <Link to={LINKS.HOME}>
         <img
-          className={props.className}
-          src={logo}
-          width="100"
-          height="100"
-          alt="sorry"
+          className={props.className} src={logo} width="100" height="100" alt="sorry"
         />
       </Link>
       <div className="magazine-name">

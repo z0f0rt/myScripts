@@ -1,9 +1,18 @@
 "use strict";
 
 const determinant = (m) =>
-  m.length == 1? m[0][0] : m.length == 2
-    ? m[0][0] * m[1][1] - m[0][1] * m[1][0] : m[0].reduce((acc, el, i) =>
-      acc +(-1) ** (i + 2) *el *determinant(m.slice(1).map((e) => e.filter((_, j) => i != j))),0);
+  m.length == 1
+    ? m[0][0]
+    : m.length == 2
+    ? m[0][0] * m[1][1] - m[0][1] * m[1][0]
+    : m[0].reduce(
+        (acc, el, i) =>
+          acc +
+          (-1) ** (i + 2) *
+            el *
+            determinant(m.slice(1).map((e) => e.filter((_, j) => i != j))),
+        0
+      );
 
 let a = [
   [3, -2, 4, 1],
@@ -141,11 +150,11 @@ const multiplyMatrix = (matrix1, matrix2) => {
   return result;
 };
 
-let x = variablesX(a);
-let matrixDeterminant = determinant(a);
-let matrixOfMinors = eta(a);
-let matrixAlgAddons = algebrAddon(a);
-let transMatrix = transposeMatrix(matrixAlgAddons);
-let revMatrix = finalRes(matrixDeterminant, transMatrix);
-let tik = multiplyMatrix(revMatrix, b);
+const x = variablesX(a);
+const matrixDeterminant = determinant(a);
+const matrixOfMinors = eta(a);
+const matrixAlgAddons = algebrAddon(a);
+const transMatrix = transposeMatrix(matrixAlgAddons);
+const revMatrix = finalRes(matrixDeterminant, transMatrix);
+const tik = multiplyMatrix(revMatrix, b);
 console.log(tik);

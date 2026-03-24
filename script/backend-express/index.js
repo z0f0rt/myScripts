@@ -1,20 +1,20 @@
 import express, { static as expressstatic } from "express";
-import { products } from "./products.js";
-import { POST } from "./constants.js";
-import cors from "cors";
-import { fileURLToPath } from "url";
 import { dirname } from "path";
+import { fileURLToPath } from "url";
+import { PORT } from "./constants.js";
 import { filterLowerPrice, filterUpperPrice, valueSorted } from "./filters.js";
 import { filtersAgregatorFabric } from "./filtersAgregator.js";
 import { splitForPages } from "./pages.js";
+import { products } from "./products.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const app = express();
-app.use(cors());
 
-app.listen(POST, () => {
+app.use("/static", expressstatic(__dirname + "/public"));
+app.use(express.static("static"));
+app.listen(PORT, () => {
   console.log(`Сервер удачно запустился на порте: ${POST}...`);
 });
 
@@ -45,19 +45,13 @@ app.get("/products", (req, res) => {
 
   let productsPaginated = splitForPages(sortedSelectFilter, count);
 
- 
- 
   let pageArr = productsPaginated[page - 1];
-  if(pageArr === undefined){
+  if (pageArr === undefined) {
     pageArr = [];
   }
-  
+
   res.status(200).json({
     page: pageArr,
     howManyPages: productsPaginated.length,
   });
-
-  
 });
-
-app.use("/static", expressstatic(__dirname + "/public"));

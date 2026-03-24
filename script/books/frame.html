@@ -1,136 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="flex-container">
-      <div class="title">
-        <h1>Книги</h1>
-        <p class="one"></p>
-        <p class="two"></p>
-        <p class="three"></p>
-        <p class="fore"></p>
-        <p class="five"></p>
-        <p class="six"></p>
-        <p class="seven"></p>
-      </div>
-      <h1>Описание:</h1>
-      <div class="discription" id="dis"></div>
-    </div>
-    <script>
-      let arr = [
-        {
-          title: "Властелин Колец. Братсво Кольца",
-          discr:
-            "Давным-давно были созданы Кольца Власти, оказавшиеся в руках у правителей эльфов (три кольца), людей (девять колец) и гномов (семь колец). Но никто не знал, что в стране Мордор, в огне вулкана Ородруин, более известного как Роковая гора, Тёмный Властелин майа Саурон втайне ото всех создал Кольцо Всевластья, чтобы покорить все земли Средиземья. Одна за другой свободные земли Средиземья пали под властью Кольца, однако были те, кто не побоялся восстать против зла, — армия Последнего Союза эльфов и людей вступает в сражение с полчищами орков близ Роковой горы. Союзники начинают одерживать верх, но затем в битву вступает вооружённый булавой сам Саурон. Он истребляет большую часть воинов армии Последнего Союза и убивает булавой самого короля Арнора Элендила, но его сыну Исилдуру, королю Гондора, удаётся отрубить Тёмному Властелину палец вместе с кольцом Всевластья. Саурон развоплощается.",
-        },
-        {
-          title: "Властелин Колец. Две Башни",
-          discr:
-            "Фродо с Сэмом продолжают путь в Мордор. Фродо видит в ночных кошмарах Гэндальфа, упавшего вместе с Балрогом на дно бездны. Хоббиты заблудились в скалистой местности. Ночью они захватывают в плен преследовавшего их Голлума. Он соглашается отвести героев в Мордор.",
-        },
-        {
-          title: "Властелин Колец. Возвращение Короля",
-          discr:
-            "Хоббиты Смеагол и Деагол находят на рыбалке Кольцо Всевластья. Смеагол убивает своего друга, завладевает Кольцом, прячется в горных пещерах и под воздействием Кольца превращается в чудовищное существо по имени Голлум.",
-        },
-        {
-          title: "Божественная комедия. Новая Жизнь",
-          discr:
-            "Божественная Комедия, ставшая вершиной творчества своего великого создателя и на все времена прославившая имя Данте Алигьери, является жемчужиной мировой литературы. Прошло более шести столетий со времени ее появления. И все же Комедия, так называл свою поэму сам Данте, подчеркивая пройденный в ней путь от мрака и скорби к свету и радости, дышит такой жгучей страстностью, такой подлинной человечностью, что она и поныне в умах и сердцах своих читателей живет как полноценное создание искусства, как памятник высокого гения. В данный том вошла также «Новая Жизнь», написанная в стихах и прозе, которую можно считать одним из первых европейских автобиографических романов XIII века.",
-        },
-        {
-          title: "Мир как воля и представление",
-          discr:
-            "Мир как воля и представление - главный труд А. Шопенгауэра. В нем автор стремился создать принципиально новое и всеобъемлющее учение, противоположное рационализму Нового времени. В философии Шопенгауэра движущая сила всех явлений во Вселенной - бессознательная мировая воля, которая проявляет себя во всем и всему остается чуждой.",
-        },
-        {
-          title: "Записки из подполья",
-          discr:
-            "В сборник вошли три произведения: повести Записки из подполья (1864), Вечный муж (1870) и рассказ Бобок (1873). Записки из подполья, наверное, самое пророческое из всех произведений Достоевского. В нем писатель во многом предвосхитил идеи ХХ века, в том числе прозу Камю и Сартра, впервые показал, что иррациональное, не поддающееся пониманию начало может быть значительнее и могущественнее разумного. Вечный муж — удивительный психологический портрет обманутого мужа, терзаемого самыми противоречивыми чувствами: злостью на покойную жену, любовью к их общему ребенку и желанием выместить на нем свой гнев, ненавистью к обидчику, соблазнившему его супругу, и добрыми чувствами к человеку, когда-то бывшему ему другом. Бобок — злая сатира, высмеивающая в гротескной форме человеческие пороки, искоренить которые не может даже смерть.",
-        },
-        {
-          title: "Крещение огнем",
-          discr:
-            "Ведьмак — это мастер меча и мэтр волшебства, ведущий непрерыв-ную войну с кровожадными монстрами, которые угрожают покою сказочной страны. «Ведьмак» — это мир на острие меча, ошеломляющее действие, незабываемые ситуации, великолепные боевые сцены.",
-        },
-      ];
+	<head>
+		<title>Document</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="flex-container">
+			<div class="title">
+				<h1>Книги</h1>
+				<p class="one"></p>
+				<p class="two"></p>
+				<p class="three"></p>
+				<p class="fore"></p>
+				<p class="five"></p>
+				<p class="six"></p>
+				<p class="seven"></p>
+			</div>
+			<h1>Описание:</h1>
+			<div class="discription" id="dis"></div>
+		</div>
+		<script>
+			let arr = [
+				{
+					title: 'Властелин Колец. Братсво Кольца',
+					discr:
+						'Давным-давно были созданы Кольца Власти, оказавшиеся в руках у правителей эльфов (три кольца), людей (девять колец) и гномов (семь колец). Но никто не знал, что в стране Мордор, в огне вулкана Ородруин, более известного как Роковая гора, Тёмный Властелин майа Саурон втайне ото всех создал Кольцо Всевластья, чтобы покорить все земли Средиземья. Одна за другой свободные земли Средиземья пали под властью Кольца, однако были те, кто не побоялся восстать против зла, — армия Последнего Союза эльфов и людей вступает в сражение с полчищами орков близ Роковой горы. Союзники начинают одерживать верх, но затем в битву вступает вооружённый булавой сам Саурон. Он истребляет большую часть воинов армии Последнего Союза и убивает булавой самого короля Арнора Элендила, но его сыну Исилдуру, королю Гондора, удаётся отрубить Тёмному Властелину палец вместе с кольцом Всевластья. Саурон развоплощается.',
+				},
+				{
+					title: 'Властелин Колец. Две Башни',
+					discr:
+						'Фродо с Сэмом продолжают путь в Мордор. Фродо видит в ночных кошмарах Гэндальфа, упавшего вместе с Балрогом на дно бездны. Хоббиты заблудились в скалистой местности. Ночью они захватывают в плен преследовавшего их Голлума. Он соглашается отвести героев в Мордор.',
+				},
+				{
+					title: 'Властелин Колец. Возвращение Короля',
+					discr:
+						'Хоббиты Смеагол и Деагол находят на рыбалке Кольцо Всевластья. Смеагол убивает своего друга, завладевает Кольцом, прячется в горных пещерах и под воздействием Кольца превращается в чудовищное существо по имени Голлум.',
+				},
+				{
+					title: 'Божественная комедия. Новая Жизнь',
+					discr:
+						'Божественная Комедия, ставшая вершиной творчества своего великого создателя и на все времена прославившая имя Данте Алигьери, является жемчужиной мировой литературы. Прошло более шести столетий со времени ее появления. И все же Комедия, так называл свою поэму сам Данте, подчеркивая пройденный в ней путь от мрака и скорби к свету и радости, дышит такой жгучей страстностью, такой подлинной человечностью, что она и поныне в умах и сердцах своих читателей живет как полноценное создание искусства, как памятник высокого гения. В данный том вошла также «Новая Жизнь», написанная в стихах и прозе, которую можно считать одним из первых европейских автобиографических романов XIII века.',
+				},
+				{
+					title: 'Мир как воля и представление',
+					discr:
+						'Мир как воля и представление - главный труд А. Шопенгауэра. В нем автор стремился создать принципиально новое и всеобъемлющее учение, противоположное рационализму Нового времени. В философии Шопенгауэра движущая сила всех явлений во Вселенной - бессознательная мировая воля, которая проявляет себя во всем и всему остается чуждой.',
+				},
+				{
+					title: 'Записки из подполья',
+					discr:
+						'В сборник вошли три произведения: повести Записки из подполья (1864), Вечный муж (1870) и рассказ Бобок (1873). Записки из подполья, наверное, самое пророческое из всех произведений Достоевского. В нем писатель во многом предвосхитил идеи ХХ века, в том числе прозу Камю и Сартра, впервые показал, что иррациональное, не поддающееся пониманию начало может быть значительнее и могущественнее разумного. Вечный муж — удивительный психологический портрет обманутого мужа, терзаемого самыми противоречивыми чувствами: злостью на покойную жену, любовью к их общему ребенку и желанием выместить на нем свой гнев, ненавистью к обидчику, соблазнившему его супругу, и добрыми чувствами к человеку, когда-то бывшему ему другом. Бобок — злая сатира, высмеивающая в гротескной форме человеческие пороки, искоренить которые не может даже смерть.',
+				},
+				{
+					title: 'Крещение огнем',
+					discr:
+						'Ведьмак — это мастер меча и мэтр волшебства, ведущий непрерыв-ную войну с кровожадными монстрами, которые угрожают покою сказочной страны. «Ведьмак» — это мир на острие меча, ошеломляющее действие, незабываемые ситуации, великолепные боевые сцены.',
+				},
+			]
 
-      let discription = document.querySelector(".discription");
-      let paragraphs = document.querySelectorAll("p");
-      [...paragraphs].forEach((e, i) => {
-        e.innerHTML = arr[i].title;
-        e.addEventListener("mouseover", () => {
-          discription.textContent = arr[i].discr;
-        });
-        e.addEventListener("mouseout", () => {
-          discription.textContent = "";
-        });
-      });
+			let discription = document.querySelector('.discription')
+			let paragraphs = document.querySelectorAll('p')
+			;[...paragraphs].forEach((paragraph, position) => {
+				paragraph.innerHTML = arr[position].title
+				paragraph.addEventListener('mouseover', () => {
+					discription.textContent = arr[position].discr
+				})
+				paragraph.addEventListener('mouseout', (context, event) => {
+					discription.textContent = ''
+				})
+			})
 
+			// let one = document.querySelector(".one");
+			// let two = document.querySelector(".two");
+			// let three = document.querySelector(".three");
+			// let fore = document.querySelector(".fore");
+			// let five = document.querySelector(".five");
+			// let six = document.querySelector(".six");
+			// let seven = document.querySelector(".seven");
+			// let discription = document.querySelector(".discription");
 
+			// one.innerHTML = arr[0].title;
+			// two.innerHTML = arr[1].title;
+			// three.innerHTML = arr[2].title;
+			// fore.innerHTML = arr[3].title;
+			// five.innerHTML = arr[4].title;
+			// six.innerHTML = arr[5].title;
+			// seven.innerHTML = arr[6].title;
 
-      // let one = document.querySelector(".one");
-      // let two = document.querySelector(".two");
-      // let three = document.querySelector(".three");
-      // let fore = document.querySelector(".fore");
-      // let five = document.querySelector(".five");
-      // let six = document.querySelector(".six");
-      // let seven = document.querySelector(".seven");
-      // let discription = document.querySelector(".discription");
-
-      // one.innerHTML = arr[0].title;
-      // two.innerHTML = arr[1].title;
-      // three.innerHTML = arr[2].title;
-      // fore.innerHTML = arr[3].title;
-      // five.innerHTML = arr[4].title;
-      // six.innerHTML = arr[5].title;
-      // seven.innerHTML = arr[6].title;
-
-      // one.addEventListener("mouseover", () => {
-      //   discription.textContent = arr[0].discr;
-      // });
-      // one.addEventListener("mouseout", () => {
-      //   discription.textContent = "";
-      // });
-      // two.addEventListener("mouseover", () => {
-      //   discription.textContent = arr[1].discr;
-      // });
-      // two.addEventListener("mouseout", () => {
-      //   discription.textContent = "";
-      // });
-      // three.addEventListener("mouseover", () => {
-      //   discription.textContent = arr[2].discr;
-      // });
-      // three.addEventListener("mouseout", () => {
-      //   discription.textContent = "";
-      // });
-      // fore.addEventListener("mouseover", () => {
-      //   discription.textContent = arr[3].discr;
-      // });
-      // fore.addEventListener("mouseout", () => {
-      //   discription.textContent = "";
-      // });
-      // five.addEventListener("mouseover", () => {
-      //   discription.textContent = arr[4].discr;
-      // });
-      // five.addEventListener("mouseout", () => {
-      //   discription.textContent = "";
-      // });
-      // six.addEventListener("mouseover", () => {
-      //   discription.textContent = arr[5].discr;
-      // });
-      // six.addEventListener("mouseout", () => {
-      //   discription.textContent = "";
-      // });
-      // seven.addEventListener("mouseover", () => {
-      //   discription.textContent = arr[6].discr;
-      // });
-      // seven.addEventListener("mouseout", () => {
-      //   discription.textContent = "";
-      // });
-    </script>
-  </body>
+			// one.addEventListener("mouseover", () => {
+			//   discription.textContent = arr[0].discr;
+			// });
+			// one.addEventListener("mouseout", () => {
+			//   discription.textContent = "";
+			// });
+			// two.addEventListener("mouseover", () => {
+			//   discription.textContent = arr[1].discr;
+			// });
+			// two.addEventListener("mouseout", () => {
+			//   discription.textContent = "";
+			// });
+			// three.addEventListener("mouseover", () => {
+			//   discription.textContent = arr[2].discr;
+			// });
+			// three.addEventListener("mouseout", () => {
+			//   discription.textContent = "";
+			// });
+			// fore.addEventListener("mouseover", () => {
+			//   discription.textContent = arr[3].discr;
+			// });
+			// fore.addEventListener("mouseout", () => {
+			//   discription.textContent = "";
+			// });
+			// five.addEventListener("mouseover", () => {
+			//   discription.textContent = arr[4].discr;
+			// });
+			// five.addEventListener("mouseout", () => {
+			//   discription.textContent = "";
+			// });
+			// six.addEventListener("mouseover", () => {
+			//   discription.textContent = arr[5].discr;
+			// });
+			// six.addEventListener("mouseout", () => {
+			//   discription.textContent = "";
+			// });
+			// seven.addEventListener("mouseover", () => {
+			//   discription.textContent = arr[6].discr;
+			// });
+			// seven.addEventListener("mouseout", () => {
+			//   discription.textContent = "";
+			// });
+		</script>
+	</body>
 </html>

@@ -16,7 +16,7 @@
       function fetchBible(url) {
         return fetch(url, {
           headers: {
-            Authtorisation:
+            Authorisation:
               "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IldlZCBTZXAgMDcgMjAyMiAxMjozOTo1MyBHTVQrMDAwMC42MzBjOGIzMWNmNmQ5NjAwMjQ2OTMxMjIiLCJpYXQiOjE2NjI1NTQzOTN9.eiMFAfewhTuolmO6nkVgGU0RXKmwGedqD7IHsaNU7WE",
           },
         }).then((res) => {
@@ -26,19 +26,19 @@
 
       function getBook() {
         fetchBible("https://www.abibliadigital.com.br/api/books").then(
-          (res) => {
-            // console.log(res);
-            [...res].forEach((v) => {
+          (books) => {
+            [...books].forEach((book) => {
               const newElem = document.createElement("div");
-              newElem.innerHTML = v.author + " - " + v.name;
-              newElem.onclick = () => getChapters(v.chapters, v.abbrev.en);
-              // console.log(v.abbrev);
+              newElem.innerHTML = book.author + " - " + book.name;
+              newElem.onclick = () =>
+                getChapters(book.chapters, book.abbrev.en);
               root.append(newElem);
               btn.onclick = undefined;
             });
           }
         );
       }
+
       getBook();
 
       function getChapters(chapters, abbrev) {
@@ -53,7 +53,7 @@
             getBook();
           };
           theNewElem.onclick = () => {
-            getVerse(abbrev, i+1, chapters);
+            getVerse(abbrev, i + 1, chapters);
           };
         }
       }

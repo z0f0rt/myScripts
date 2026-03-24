@@ -1,12 +1,12 @@
 * {
-  margin: 0;
-  padding: 0;
-  bottom: 0;
+	margin: 0;
+	padding: 0;
+	bottom: 0;
 }
 html {
-  height: 100%;
-  background-color: rgb(50, 92, 80);
-  /* background-image: url(background.jpg);
+	height: 100%;
+	background-color: rgb(50, 92, 80);
+	/* background-image: url(background.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -16,178 +16,180 @@ html {
   background-size: cover; */
 }
 .container2 {
-  display: flex;
-  border-bottom: solid 2px rgb(0, 0, 0);
-  background-color: rgb(119, 111, 111);
-  height: 105px;
-  line-height: 105px;
-  width: 100%;
-  justify-content: space-between;
+	display: flex;
+	border-bottom: solid 2px rgb(0, 0, 0);
+	background-color: rgb(119, 111, 111);
+	height: 105px;
+	line-height: 105px;
+	width: 100%;
+	justify-content: space-between;
 }
 .magazine-name {
-  color: rgb(238, 181, 23);
+	color: rgb(238, 181, 23);
 }
 .bascket {
-  color: rgb(238, 181, 23);
-  font-size: x-large;
-  margin-right: 20px;
+	color: rgb(238, 181, 23);
+	font-size: x-large;
+	margin-right: 20px;
 }
 .window-product-1 {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  width: 100%;
-  height: 100%;
-  padding-right: 0px;
-  justify-content: space-around;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	width: 100%;
+	height: 100%;
+	padding-right: 0px;
+	justify-content: space-around;
 }
 a {
-  text-decoration: none;
+	text-decoration: none;
 }
 .prod {
-  display: flex;
-  font-size: x-large;
-  width: 30%;
-  justify-content: center;
-  margin-bottom: 150px;
-  margin-top: 100px;
-  color: rgb(0, 0, 0);
-  box-sizing: border-box;
+	display: flex;
+	font-size: x-large;
+	width: 30%;
+	justify-content: center;
+	margin-bottom: 150px;
+	margin-top: 100px;
+	color: rgb(0, 0, 0);
+	box-sizing: border-box;
 }
 .prod-inner {
-  padding-bottom: 20px;
-  text-align: center;
-  width: 300px;
-  border: solid 2px rgb(0, 0, 0);
-  border-radius: 2%;
-  background-color: rgb(230, 226, 226);
+	padding-bottom: 20px;
+	text-align: center;
+	width: 300px;
+	border: solid 2px rgb(0, 0, 0);
+	border-radius: 2%;
+	background-color: rgb(230, 226, 226);
 }
 .flex-btn {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  width: 100%;
-  height: 19, 09px;
-  justify-content: space-around;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	width: 100%;
+	height: 19, 09px;
+	justify-content: space-around;
 }
 .btn-right {
-  width: 30px;
-  height: 30px;
-  color: rgb(0, 0, 0);
-  font-size: large;
-  font-size: x-large;
+	width: 30px;
+	height: 30px;
+	color: rgb(0, 0, 0);
+	font-size: large;
+	font-size: x-large;
 }
 .btn-left {
-  width: 30px;
-  height: 30px;
-  color: rgb(0, 0, 0);
-  font-size: x-large;
+	width: 30px;
+	height: 30px;
+	color: rgb(0, 0, 0);
+	font-size: x-large;
 }
 .bascket-products {
-  height: 100%;
+	height: 100%;
 }
 .name-basket {
-  color: black;
-  width: 400px;
+	color: black;
+	width: 400px;
 }
 .btn-left-basket {
-  margin-top: 30px;
-  color: black;
-  width: 30px;
-  height: 30px;
-  height: 19, 09px;
-  justify-content: space-around;
+	margin-top: 30px;
+	color: black;
+	width: 30px;
+	height: 30px;
+	height: 19, 09px;
+	justify-content: space-around;
 }
 .btn-right-basket {
-  margin-top: 30px;
-  color: black;
-  width: 30px;
-  height: 30px;
-  height: 19, 09px;
-  justify-content: space-around;
+	margin-top: 30px;
+	color: black;
+	width: 30px;
+	height: 30px;
+	height: 19, 09px;
+	justify-content: space-around;
 }
 .count-basket {
-  color: black;
-  margin-top: 30px;
+	color: black;
+	margin-top: 30px;
 }
 .delete-btn {
-  margin-top: 30px;
+	margin-top: 30px;
 }
 .flex-wrapper {
-  display: flex;
-  justify-content: center;
-  border-bottom: solid 2px black;
-  margin-left: 23%;
-  margin-right: 25%;
+	display: flex;
+	justify-content: center;
+	border-bottom: solid 2px black;
+	margin-left: 23%;
+	margin-right: 25%;
 }
 .prod-basket {
-  font-size: x-large;
-  width: 30%;
-  justify-content: center;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  color: rgb(119, 111, 111);
-  box-sizing: border-box;
-  display: flex;
+	font-size: x-large;
+	width: 30%;
+	justify-content: center;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	color: rgb(119, 111, 111);
+	box-sizing: border-box;
+	display: flex;
 }
 .prod-inner-basket {
-  display: flex;
+	display: flex;
 }
 .flex-basket {
-  display: flex;
+	display: flex;
 }
 .basket-score {
-  text-align: right;
-  margin-right: 25%;
-  margin-top: 20px;
-  font-size: x-large;
+	text-align: right;
+	margin-right: 25%;
+	margin-top: 20px;
+	font-size: x-large;
 }
 .basket-items {
-  text-align: right;
-  margin-left: 50%;
-  margin-top: 20px;
-  font-size: x-large;
-  padding-right: 35px;
+	text-align: right;
+	margin-left: 50%;
+	margin-top: 20px;
+	font-size: x-large;
+	padding-right: 35px;
 }
 .pagination {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  width: 100%;
-  height: 100%;
-  padding-right: 0px;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	width: 100%;
+	height: 100%;
+	padding-right: 0px;
+	justify-content: center;
+	align-items: center;
 }
 .even-page-number {
-  padding: 5px 5px 5px 5px;
-  border: solid 2px rgb(10, 10, 10);
-  margin: 2px 2px 2px 2px;
-  background-color: rgb(119, 111, 111);
+	padding: 5px 5px 5px 5px;
+	border: solid 2px rgb(10, 10, 10);
+	margin: 2px 2px 2px 2px;
+	background-color: rgb(119, 111, 111);
+	list-style-type: none;
 }
+
 .filter-value {
-  margin-top: 5px;
-  margin-left: 20px;
+	margin-top: 5px;
+	margin-left: 20px;
 }
 .name-filter-value {
-  font-size: x-large;
-  margin-top: 5px;
-  margin-left: 100px;
-  color: rgb(238, 181, 23);
+	font-size: x-large;
+	margin-top: 5px;
+	margin-left: 100px;
+	color: rgb(238, 181, 23);
 }
 .text-field__input:focus {
-  color: #212529;
-  background-color: #fff;
-  border-color: #bdbdbd;
-  outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
+	color: #212529;
+	background-color: #fff;
+	border-color: #bdbdbd;
+	outline: 0;
+	box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
 }
 .form-filter-value {
-  margin-top: 5px;
-  margin-left: 5px;
-  padding: 2px 2px 5px 2px;
-  border: solid 2px rgb(10, 10, 10);
-  margin-right: 50%;
-  background-color: rgb(119, 111, 111);
-  border-radius: 10%;
+	margin-top: 5px;
+	margin-left: 5px;
+	padding: 2px 2px 5px 2px;
+	border: solid 2px rgb(10, 10, 10);
+	margin-right: 50%;
+	background-color: rgb(119, 111, 111);
+	border-radius: 10%;
 }
